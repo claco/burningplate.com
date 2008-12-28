@@ -22,43 +22,26 @@
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-	<?php echo $html->charset(); ?>
-	<title>
-		<?php __('CakePHP: the rapid development php framework:'); ?>
-		<?php echo $title_for_layout; ?>
-	</title>
-	<?php
-		echo $html->meta('icon');
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<?php echo $html->charset(); ?>
+		<title><?php echo Configure::read('Settings.title'); ?>: <?php echo $title_for_layout; ?></title>
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/reset/reset-min.css">
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/base/base-min.css">
+	</head>
+	<body>
+		<div id="container">
+			<div id="header">
+				<h1><?php echo Configure::read('Settings.title'); ?></h1>
+				<h2><?php echo $title_for_layout; ?></h2>
+			</div>
+			<div id="content">
+				<?php echo $content_for_layout; ?>
+			</div>
+			<div id="footer">
 
-		echo $html->css('cake.generic');
-
-		echo $scripts_for_layout;
-	?>
-</head>
-<body>
-	<div id="container">
-		<div id="header">
-			<h1><?php echo $html->link(__('CakePHP: the rapid development php framework', true), 'http://cakephp.org'); ?></h1>
-		</div>
-		<div id="content">
-
-			<?php $session->flash(); ?>
-
-			<?php echo $content_for_layout; ?>
-
-		</div>
-		<div id="footer">
-			<?php echo $html->link(
-					$html->image('cake.power.gif', array('alt'=> __("CakePHP: the rapid development php framework", true), 'border'=>"0")),
-					'http://www.cakephp.org/',
-					array('target'=>'_blank'), null, false
-				);
-			?>
-		</div>
-	</div>
-	<?php echo $cakeDebug; ?>
-</body>
+			</div>
+		</div><?php echo $cakeDebug; ?>
+	</body>
 </html>

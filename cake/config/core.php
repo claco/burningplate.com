@@ -224,4 +224,6 @@
  *
  */
 	Cache::config('default', array('engine' => 'File'));
+
+	Configure::write('Settings.title', 'Burning Plate');
 ?>
