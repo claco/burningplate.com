@@ -1,1 +1,4 @@
-rails/log
+log
+db
+tmp
+
