@@ -1,0 +1,21 @@
+    # Be sure to only have this line once in your configuration
+    NameVirtualHost 127.0.0.1:80
+
+    # This is the configuration for .
+    Listen 127.0.0.1:80
+
+    <VirtualHost 127.0.0.1:80>
+      ServerName ..localhost
+      DocumentRoot "/Users/claco/burningplate.com/symfony/web"
+      DirectoryIndex index.php
+      <Directory "/Users/claco/burningplate.com/symfony/web">
+        AllowOverride All
+        Allow from All
+      </Directory>
+
+      Alias /sf "/Users/claco/burningplate.com/symfony/data/web/sf"
+      <Directory "/Users/claco/burningplate.com/symfony/data/web/sf">
+        AllowOverride All
+        Allow from All
+      </Directory>
+    </VirtualHost>
