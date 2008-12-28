@@ -2,18 +2,52 @@ package BurningPlate;
 
 use strict;
 use warnings;
+use MojoX::Renderer::TT;
 
-use base 'Mojo';
+use base 'Mojolicious';
 
-sub handler {
-    my ($self, $tx) = @_;
+# This method will run for each request
+sub dispatch {
+    my ( $self, $c ) = @_;
 
-    # $tx is a Mojo::Transaction instance
-    $tx->res->code(200);
-    $tx->res->headers->content_type('text/plain');
-    $tx->res->body('Hello Mojo!');
+    # Try to find a static file
+    my $done = $self->static->dispatch($c);
 
-    return $tx;
+    # Use routes if we don't have a response code yet
+    $self->routes->dispatch($c) unless $done;
+
+    # Nothing found, serve static file "public/404.html"
+    unless ( $c->res->code ) {
+        $self->static->serve( $c, '/404.html' );
+        $c->res->code(404);
+    }
+}
+
+# This method will run once at server start
+sub startup {
+    my $self = shift;
+
+    # Use our own context class
+    $self->ctx_class('BurningPlate::Context');
+
+    # Use TT
+    my $tt = MojoX::Renderer::TT->build(
+        mojo             => $self,
+        template_options => {
+            WRAPPER   => 'wrapper.tt',
+            VARIABLES => { name => 'Burning Plate' }
+        }
+    );
+    $self->renderer->add_handler( tt => $tt );
+    $self->renderer->default_format('tt');
+    $self->renderer->types->type( 'tt' => 'text/html' );
+
+    # Routes
+    my $r = $self->routes;
+
+    # Default route
+    $r->route('/:controller/:action/:id')
+      ->to( controller => 'home', action => 'index', id => 1 );
 }
 
 1;
