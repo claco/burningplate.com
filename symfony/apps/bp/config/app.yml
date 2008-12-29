@@ -1,2 +1,3 @@
 # default values
-#all:
+all:
+    name: Burning Plate
