@@ -40,7 +40,7 @@
 				<?php echo $content_for_layout; ?>
 			</div>
 			<div id="footer">
-
+                Powered by CakePHP
 			</div>
 		</div><?php echo $cakeDebug; ?>
 	</body>

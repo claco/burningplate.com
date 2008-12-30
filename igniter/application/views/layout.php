@@ -16,7 +16,7 @@
 				<?php echo $content_for_layout; ?>
 			</div>
 			<div id="footer">
-
+                Powered by Code Igniter
 			</div>
 		</div>
 	</body>

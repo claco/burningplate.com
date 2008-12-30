@@ -16,7 +16,7 @@
 				<?php echo $sf_content ?>
 			</div>
 			<div id="footer">
-
+                Powered by Symfony
 			</div>
 		</div>
 	</body>

@@ -16,7 +16,7 @@
 				[% content %]
 			</div>
 			<div id="footer">
-
+				Powered by Mojo
 			</div>
 		</div>
 	</body>
