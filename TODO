@@ -1,0 +1,14 @@
+Layout
+  - default html template
+  - home page/controller
+
+Restaurants
+  - development database/config
+  - restaurants schema/table: id, name, created, updated
+  - restaurants model
+  - restaurants controller: index/view
+  - restaurants views: index/view
+  - restaurants/restaurant partials/elements for index
+  - html encoding
+  - menu/route based links
+  - 404 restaurant not found
