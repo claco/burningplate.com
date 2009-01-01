@@ -35,5 +35,8 @@
  * @subpackage    cake.app
  */
 class AppController extends Controller {
+    function notFound() {
+        $this->header('HTTP/1.1 404 Not Found');
+    }
 }
 ?>

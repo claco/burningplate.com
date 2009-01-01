@@ -13,7 +13,7 @@ class BurningPlateSchema extends CakeSchema {
 
     public $restaurants = array(
         'id' => array('type'=>'integer', 'null' => false, 'default' => NULL, 'length' => 8, 'key' => 'primary'),
-        'name' => array('type'=>'string', 'null' => true, 'default' => NULL),
+        'name' => array('type'=>'string', 'null' => true, 'default' => NULL, 'length' => 255),
         'created' => array('type' => 'datetime'),
         'updated' => array('type' => 'datetime'),
         'indexes' => array(

@@ -17,7 +17,8 @@ class RestaurantsController extends AppController {
     		$this->set('restaurant', $this->Restaurant->read(null, $id));
     		$this->pageTitle = $data['Restaurant']['name'];		    
 		} else {
-            $this->cakeError('error404');
+            $this->pageTitle = 'Restaurant Not Found';
+            $this->notFound();
 		}
 	}
 

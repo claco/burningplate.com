@@ -38,7 +38,7 @@
 				<h2><?php echo h($title_for_layout); ?></h2>
 				<ul>
 				    <li><?php echo $html->link('Home', array('controller' => 'pages', 'action' => 'display', 'home'))?></li>
-				    <li><?php echo $html->link('Restaurants', array('controller'=>'restaurants'))?></li>
+				    <li><?php echo $html->link('Restaurants', array('controller'=>'restaurants', action=>'index'))?></li>
 				</ul>
 			</div>
 			<div id="content">

@@ -1,0 +1,5 @@
+[% IF restaurant %]
+<div class="restaurant">
+   <a href="[% c.uri_for('/restaurants', restaurant.id) %]">[% restaurant.name | html %]</a>
+</div>
+[% END %]
