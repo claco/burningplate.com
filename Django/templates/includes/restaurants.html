@@ -1,0 +1,7 @@
+{% if restaurants %}
+<div class="restaurants">
+	{% for restaurant in restaurants %}
+		{% include 'includes/restaurant.html' %}
+	{% endfor %}
+</div>
+{% endif %}

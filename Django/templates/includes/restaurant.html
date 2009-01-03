@@ -1,0 +1,5 @@
+{% if restaurant %}
+<div class="restaurant">
+	<a href="{% url restaurant restaurant.id %}">{{restaurant.name}}</a>
+</div>
+{% endif %}
