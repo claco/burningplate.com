@@ -34,7 +34,7 @@
 | the active record class
 */
 
-$active_group = "default";
+$active_group = "development";
 $active_record = TRUE;
 
 $db['default']['hostname'] = "localhost";
@@ -49,6 +49,19 @@ $db['default']['cache_on'] = FALSE;
 $db['default']['cachedir'] = "";
 $db['default']['char_set'] = "utf8";
 $db['default']['dbcollat'] = "utf8_general_ci";
+
+$db['development']['hostname'] = "localhost";
+$db['development']['username'] = "";
+$db['development']['password'] = "";
+$db['development']['database'] = "application/db/development.db";
+$db['development']['dbdriver'] = "sqlite";
+$db['development']['dbprefix'] = "";
+$db['development']['pconnect'] = TRUE;
+$db['development']['db_debug'] = TRUE;
+$db['development']['cache_on'] = FALSE;
+$db['development']['cachedir'] = "";
+$db['development']['char_set'] = "utf8";
+$db['development']['dbcollat'] = "utf8_general_ci";
 
 
 /* End of file database.php */
