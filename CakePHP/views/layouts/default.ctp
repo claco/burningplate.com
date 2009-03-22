@@ -28,8 +28,8 @@
 	<head>
         <?php echo $html->charset(); ?>
 		<title><?php echo Configure::read('Settings.name'); ?>: <?php echo h($title_for_layout); ?></title>
-		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/reset/reset-min.css">
-		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/base/base-min.css">
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/reset/reset-min.css" />
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/base/base-min.css" />
 	</head>
 	<body>
 		<div id="container">

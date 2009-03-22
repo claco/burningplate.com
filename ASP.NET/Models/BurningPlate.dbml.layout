@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="BurningPlate">
+  <DataContextMoniker Name="/BurningPlateDataContext" />
+  <nestedChildShapes>
+    <classShape Id="db103c6b-cf4f-4f07-9162-1cd012610635" absoluteBounds="7.125, 1.875, 2, 1.4248478190104168">
+      <DataClassMoniker Name="/BurningPlateDataContext/Restaurant" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3df381af-3e40-4506-b915-cadb55642eae" absoluteBounds="7.14, 2.335, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

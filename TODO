@@ -1,14 +1,18 @@
 Layout
   - default html template
   - home page/controller
+  - errors/404
+
+Application
+  - Base Controller
 
 Restaurants
   - development database/config
-  - restaurants schema/table: id, name, created, updated
-  - restaurants model
+  - restaurants schema/table: id, name, created (UTC), updated (UTC)
+  - restaurants model (abstracted from ORM)
   - restaurants controller: index/view
   - restaurants views: index/view
   - restaurants/restaurant partials/elements for index
   - html encoding
   - menu/route based links
-  - 404 restaurant not found
+  - 404 restaurant not found by number and when not int

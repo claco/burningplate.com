@@ -1,4 +1,10 @@
 Just random thoughts as I tinker along...
 
+CodeIgniter aims to be simple, but the last of command link to create db/schema
+is a pita for new apps. There are classes to do the lifting, but still...
+
+CodeIgniter lacks partial views, or CakePHP-like elements. Includes fill the
+need in simple cases. $this->load->view() seems hacky.
+
 Django seems week on partial views. Custom tags are a pita compared to
-other frameworks partial views
+other frameworks partial views. includes work for simple issues.

@@ -1,0 +1,28 @@
+<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head runat="server">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title><%=Html.Encode(Application["Name"])%>: <%=Html.Encode(ViewData["Title"] ?? Page.Title)%></title>
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/reset/reset-min.css" />
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/base/base-min.css" />
+	</head>
+	<body>
+		<div id="container">
+			<div id="header">
+				<h1><%=Html.Encode(Application["Name"])%></h1>
+				<h2><%=Html.Encode(ViewData["Title"] ?? Page.Title)%></h2>
+				<ul>
+				    <li><a href="/">Home</a></li>
+				    <li><a href="<%=Url.RouteUrl("Restaurants")%>">Restaurants</a></li>
+				</ul>
+			</div>
+			<div id="content">
+				<asp:ContentPlaceHolder ID="MainContent" runat="server" />
+			</div>
+			<div id="footer">
+				Powered by ASP.NET
+			</div>
+		</div>
+	</body>
+</html>

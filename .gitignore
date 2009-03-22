@@ -3,3 +3,5 @@ db
 tmp
 cache
 *.pyc
+bin
+obj
