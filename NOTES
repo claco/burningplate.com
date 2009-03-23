@@ -6,5 +6,8 @@ is a pita for new apps. There are classes to do the lifting, but still...
 CodeIgniter lacks partial views, or CakePHP-like elements. Includes fill the
 need in simple cases. $this->load->view() seems hacky.
 
+CodeIgniter lacks native reverse routing. Very spoiled on creating links
+using the route in other frameworks.
+
 Django seems week on partial views. Custom tags are a pita compared to
 other frameworks partial views. includes work for simple issues.
