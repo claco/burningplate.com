@@ -13,6 +13,5 @@ namespace BurningPlate.Controllers
         {
             return View();
         }
-
     }
 }

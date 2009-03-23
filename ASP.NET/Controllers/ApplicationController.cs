@@ -9,7 +9,10 @@ namespace BurningPlate.Controllers
 {
     public class ApplicationController : Controller
     {
-  
+        public ActionResult HttpNotFound()
+        {
+            return new HttpNotFoundResult();
+        }
     }
 
     public class HttpNotFoundResult : ViewResult

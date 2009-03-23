@@ -27,6 +27,8 @@ namespace BurningPlate.Controllers
             }
             else
             {
+                ViewData["Title"] = restaurant.Name;
+
                 return View(restaurant);
             }
         }

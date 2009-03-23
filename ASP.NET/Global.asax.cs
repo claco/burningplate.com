@@ -29,9 +29,15 @@ namespace BurningPlate
             );
 
             routes.MapRoute(
-                "Default",                                              // Route name
-                "{controller}/{action}/{id}",                           // URL with parameters
-                new { controller = "Home", action = "Index", id = "" }  // Parameter defaults
+                "Home",
+                "",
+                new { controller = "Home", action = "Index" }
+            );
+
+            routes.MapRoute(
+                "NotFound",
+                "{*path}",
+                new { controller = "Application", action = "HttpNotFound" }
             );
         }
 
