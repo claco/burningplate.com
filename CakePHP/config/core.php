@@ -226,4 +226,5 @@
 	Cache::config('default', array('engine' => 'File'));
 
 	Configure::write('Settings.name', 'Burning Plate');
+	date_default_timezone_set('UTC');
 ?>
