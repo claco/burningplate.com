@@ -42,7 +42,7 @@
 
 $route['default_controller'] = "home";
 $route['scaffolding_trigger'] = "";
-$route['restaurants/(:num)'] = 'restaurants/view/$1';
+$route['restaurants/(:any)'] = 'restaurants/view/$1';
 
 
 /* End of file routes.php */
