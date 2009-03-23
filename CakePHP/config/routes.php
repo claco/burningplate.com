@@ -37,6 +37,11 @@
  */
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 	
-    Router::mapResources('restaurants');
+	Router::connect('/restaurants/:id',
+	    array('controller' => 'restaurants', 'action' => 'view'),
+	    array('pass' => array('id'), 'id' => '.*')
+	);
+    Router::connect('/restaurants', array('controller' => 'restaurants', 'action' => 'index'));
+    
     Router::parseExtensions();
 ?>

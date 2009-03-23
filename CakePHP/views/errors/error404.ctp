@@ -1,0 +1,1 @@
+<?php $this->pageTitle = 'Resource Not Found'; ?>
