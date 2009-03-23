@@ -26,16 +26,16 @@ BurningPlate::Controller::Root - Root Controller for BurningPlate
 
 =cut
 
-sub index :Path :Args(0) {
+sub index : Path : Args(0) {
     my ( $self, $c ) = @_;
 
 }
 
-sub default :Path {
+sub default : Path {
     my ( $self, $c ) = @_;
-    $c->response->body( 'Page not found' );
     $c->response->status(404);
-    
+    $c->stash->{'template'} = 'errors/404.tt';
+    $c->stash->{'title'} = 'Resource Not Found';
 }
 
 =head2 end
@@ -44,7 +44,8 @@ Attempt to render a view, if needed.
 
 =cut 
 
-sub end : ActionClass('RenderView') {}
+sub end : ActionClass('RenderView') {
+}
 
 =head1 AUTHOR
 

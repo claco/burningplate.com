@@ -37,7 +37,7 @@ sub instance : Chained('/') PathPrefix CaptureArgs(1) {
     my $restaurant = $c->model('Restaurants')->find($id);
 
     if ($restaurant) {
-        $c->stash->{'title'} = $restaurant->name;
+        $c->stash->{'title'}      = $restaurant->name;
         $c->stash->{'restaurant'} = $restaurant;
     } else {
         $c->response->status(404);
