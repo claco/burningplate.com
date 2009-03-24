@@ -40,5 +40,6 @@ Merb::Router.prepare do
   default_routes
   
   # Change this for your home page to be available at /
-  match('/').to(:controller => 'home', :action =>'index')
+  match('/').to(:controller => 'home', :action =>'index').name('home')
+  match('/restaurants').to(:controller => 'restaurants', :action => 'index').name('restaurants')
 end

@@ -11,6 +11,10 @@
 			<div id="header">
 				<h1><%= name %></h1>
 				<h2><%= @title %></h2>
+				<ul>
+				    <li><a href="<%=url(:home) %>">Home</a></li>
+				    <li><a href="<%=url(:restaurants) %>">Restaurants</a></li>
+				</ul>
 			</div>
 			<div id="content">
 				<%= catch_content :for_layout %>

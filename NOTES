@@ -9,5 +9,9 @@ need in simple cases. $this->load->view() seems hacky.
 CodeIgniter lacks native reverse routing. Very spoiled on creating links
 using the route in other frameworks.
 
+CodeIgniter custom 404 using the layout is not straight forward.
+
 Django seems week on partial views. Custom tags are a pita compared to
 other frameworks partial views. includes work for simple issues.
+
+Merb is Rails lite, less friendly docs
