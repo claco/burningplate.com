@@ -9,13 +9,17 @@ def index(request):
     return render_to_response('restaurants/index.html', locals())
     
 def view(request, id):
-    notFound = False
-    try:
-        restaurant = Restaurants.objects.get(id=id)
-        title = restaurant.name
-    except Restaurants.DoesNotExist:
-        notFound = True
-        title = 'Restaurant Not Found'
+    notFound = True
+    title = 'Restaurant Not Found'
+
+    if id.isdigit():
+        try:
+            restaurant = Restaurants.objects.get(id=id)
+            title = restaurant.name
+            notFound = False
+        except Restaurants.DoesNotExist:
+            notFound = True
+
     response = render_to_response('restaurants/view.html', locals())
     if notFound:
         response.status_code = 404
