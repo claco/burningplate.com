@@ -3,7 +3,7 @@ package BurningPlate::Home;
 use strict;
 use warnings;
 
-use base 'Mojolicious::Controller';
+use base 'BurningPlate::Controller';
 
 # This action will render a template
 sub index {

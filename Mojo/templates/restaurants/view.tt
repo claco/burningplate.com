@@ -1,0 +1,5 @@
+[% IF restaurant %]
+	[% restaurant.name | html %]
+[% END %]
+
+[% id %]

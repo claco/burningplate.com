@@ -46,8 +46,20 @@ sub startup {
     my $r = $self->routes;
 
     # Default route
-    $r->route('/:controller/:action/:id')
-      ->to( controller => 'home', action => 'index', id => 1 );
+    $r->route('/')->to( controller => 'home', action => 'index' )
+      ->name('home');
+
+    $r->route('/restaurants/:id')
+      ->to( controller => 'restaurants', action => 'view' )
+      ->name('restaurant');
+
+    $r->route('/restaurants')
+      ->to( controller => 'restaurants', action => 'index' )
+      ->name('restaurants');
+}
+
+sub db {
+    return 'dddd';
 }
 
 1;

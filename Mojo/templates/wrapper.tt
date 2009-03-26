@@ -11,6 +11,10 @@
 			<div id="header">
 				<h1>[% name %]</h1>
 				<h2>[% title %]</h2>
+				<ul>
+				   <li><a href="[% c.url_for('home') %]">Home</a></li>
+				    <li><a href="[% c.url_for('restaurants') %]">Restaurants</a></li>
+				</ul>
 			</div>
 			<div id="content">
 				[% content %]
