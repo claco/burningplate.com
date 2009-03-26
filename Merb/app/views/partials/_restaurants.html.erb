@@ -1,0 +1,7 @@
+<% if @restaurants && @restaurants.count %>
+<div class="restaurants">
+	<% @restaurants.each do |r| %>
+		<%=partial 'partials/restaurant', :with => r, :as => '@restaurant' %>
+	<% end %>
+</div>
+<% end %>

@@ -37,9 +37,10 @@ Merb::Router.prepare do
   # This is fine for most cases.  If you're heavily using resource-based
   # routes, you may want to comment/remove this line to prevent
   # clients from calling your create or destroy actions with a GET
-  default_routes
+  # default_routes
   
   # Change this for your home page to be available at /
   match('/').to(:controller => 'home', :action =>'index').name('home')
   match('/restaurants').to(:controller => 'restaurants', :action => 'index').name('restaurants')
+  match('/restaurants/:id').to(:controller => 'restaurants', :action => 'view').name('restaurant')  
 end

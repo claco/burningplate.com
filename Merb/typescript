@@ -1,0 +1,1061 @@
+Script started on Mon Mar 23 20:38:19 2009
+claco@mbp ~/burningplate.com/merb $ merb --help
+Usage: merb [uGdcIpPhmailLerkKX] [argument]
+Merb. Pocket rocket web framework
+********************************************************************************
+If no flags are given, Merb starts in the foreground on port 4000.
+********************************************************************************
+    -u, --user USER                  This flag is for having merb run as a user other than the one currently logged in. Note: if you set this you must also provide a --group option for it to take effect.
+    -G, --group GROUP                This flag is for having merb run as a group other than the one currently logged in. Note: if you set this you must also provide a --user option for it to take effect.
+    -d, --daemonize                  This will run a single merb in the background.
+    -N, --no-daemonize               This will allow you to run a cluster in console mode
+    -c, --cluster-nodes NUM_MERBS    Number of merb daemons to run.
+    -I, --init-file FILE             File to use for initialization on load, defaults to config/init.rb
+    -p, --port PORTNUM               Port to run merb on, defaults to 4000.
+    -o, --socket-file FILE           Socket file to run merb on, defaults to [Merb.root]/log/merb.sock. This is for web servers, like thin, that use sockets.Specify this *only* if you *must*.
+    -s, --socket SOCKNUM             Socket number to run merb on, defaults to 0.
+    -n, --name NAME                  Set the name of the application. This is used in the process title and log file names.
+    -P, --pid PIDFILE                PID file, defaults to [Merb.root]/log/merb.main.pid for the master process and[Merb.root]/log/merb.[port number].pid for worker processes. For clusters, use %s to specify where in the file merb should place the port number. For instance: -P myapp.%s.pid
+    -h, --host HOSTNAME              Host to bind to (default is 0.0.0.0).
+    -m, --merb-root /path/to/approot The path to the Merb.root for the app you want to run (default is current working directory).
+    -a, --adapter ADAPTER            The rack adapter to use to run merb (default is mongrel)[mongrel, emongrel, thin, ebb, fastcgi, webrick]
+    -R, --rackup FILE                Load an alternate Rack config file (default is config/rack.rb)
+    -i, --irb-console                This flag will start merb in irb console mode. All your models and other classes will be available for you in an irb session.
+    -S, --sandbox                    This flag will enable a sandboxed irb console. If your ORM supports transactions, all edits will be rolled back on exit.
+    -l, --log-level LEVEL            Log levels can be set to any of these options: debug < info < warn < error < fatal (default is info)
+    -L, --log LOGFILE                A string representing the logfile to use. Defaults to [Merb.root]/log/merb.[main].log for the master process and [Merb.root]/log/merb[port number].logfor worker processes
+    -e, --environment STRING         Environment to run Merb under [development, production, testing] (default is development)
+    -r ['RUBY CODE'| FULL_SCRIPT_PATH]
+        --script-runner              Command-line option to run scripts and/or code in the merb app.
+    -K, --graceful PORT or all       Gracefully kill one merb proceses by port number.  Use merb -K all to gracefully kill all merbs.
+    -k, --kill PORT                  Force kill one merb worker by port number. This will cause the worker tobe respawned.
+        --fast-deploy                Reload the code, but not yourinit.rb or gems
+    -X, --mutex on/off               This flag is for turning the mutex lock on and off.
+    -D, --debugger                   Run merb using rDebug.
+    -V, --verbose                    Print extra information
+    -C, --console-trap               Enter an irb console on ^C
+    -?, -H, --help                   Show this help message
+claco@mbp ~/burningplate.com/merb $ cls
+bash: cls: command not found
+claco@mbp ~/burningplate.com/merb $ c[Kcd ..[K[K[Kcls
+bash: cdcls: command not found
+claco@mbp ~/burningplate.com/merb $ rake
+(in /Users/claco/burningplate.com/Merb)
+Loading init file from /Users/claco/burningplate.com/Merb/config/init.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/development.rb
+./spec/requests/../spec_helper.rb:17: uninitialized constant Merb::Test::ViewHelper (NameError)
+	from /Library/Ruby/Gems/1.8/gems/rspec-1.1.11/lib/spec/runner.rb:184:in `configure'
+	from ./spec/requests/../spec_helper.rb:16
+	from ./spec/requests/home_spec.rb:1:in `require'
+	from ./spec/requests/home_spec.rb:1
+	from /Library/Ruby/Gems/1.8/gems/rspec-1.1.11/lib/spec/runner/example_group_runner.rb:14:in `load'
+	from /Library/Ruby/Gems/1.8/gems/rspec-1.1.11/lib/spec/runner/example_group_runner.rb:14:in `load_files'
+	from /Library/Ruby/Gems/1.8/gems/rspec-1.1.11/lib/spec/runner/example_group_runner.rb:13:in `each'
+	from /Library/Ruby/Gems/1.8/gems/rspec-1.1.11/lib/spec/runner/example_group_runner.rb:13:in `load_files'
+	from /Library/Ruby/Gems/1.8/gems/rspec-1.1.11/lib/spec/runner/options.rb:98:in `run_examples'
+	from /Library/Ruby/Gems/1.8/gems/rspec-1.1.11/lib/spec/runner/command_line.rb:10:in `run'
+	from /Library/Ruby/Gems/1.8/gems/rspec-1.1.11/bin/spec:4
+rake aborted!
+Command /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby -I"/Library/Ruby/Gems/1.8/gems/rspec-1.1.11/lib"  "/Library/Ruby/Gems/1.8/gems/rspec-1.1.11/bin/spec" "spec/requests/home_spec.rb" --options ./spec/spec.opts failed
+
+(See full trace by running task with --trace)
+claco@mbp ~/burningplate.com/merb $ cls
+bash: cls: command not found
+claco@mbp ~/burningplate.com/merb $ clear
+[H[2Jclaco@mbp ~/burningplate.com/merb $ merb-gen
+Usage: merb-gen generator_name [options] [args]
+
+Generate components for your application or entirely new applications.
+
+Available generators
+    app                              Generates a new "jump start" Merb application with support for DataMapper,
+    controller                       Generates a new controller.
+    core                             Generates a new Merb application with Ruby on Rails like structure.
+    flat                             Generates a new flat Merb application: all code in one file except for config files and
+    helper                           Generates a new helper.
+    layout                           Generates a new layout.
+    mailer                           Generates a mailer
+    migration                        Generates a new database migration.
+    model                            Generates a new model. You can specify an ORM different from what the rest
+    part                             Generates a new part controller.
+    plugin                           Generates a new Merb plugin.
+    resource                         Generates a new resource.
+    resource_controller              Generates a new resource controller.
+    session_migration                Generates a new session migration.
+    slice                            Generates a merb slice.
+    thor                             
+    very_flat                        Generates a new very flat Merb application: the whole application
+
+General options:
+    -p, --pretend                    Run, but do not make any changes.
+    -f, --force                      Overwrite files that already exist.
+    -s, --skip                       Skip files that already exist.
+    -d, --delete                     Delete files that have previously been generated with this generator.
+        --no-color                   Don't colorize the output
+    -h, --help                       Show this message
+        --debug                      Do not catch errors
+
+claco@mbp ~/burningplate.com/merb $ merb-gen[3Pclearmerb-gen model
+Loading init file from /Users/claco/burningplate.com/Merb/config/init.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/development.rb
+Usage: merb-gen model [options] [args]
+
+Generates a new model. You can specify an ORM different from what the rest
+of the application uses.
+
+
+Options specific for this generator:
+        --testing-framework=value    Testing framework to use (one of: rspec, test_unit)
+        --orm=value                  Object-Relation Mapper to use (one of: none, activerecord, datamapper, sequel)
+
+General options:
+    -p, --pretend                    Run, but do not make any changes.
+    -f, --force                      Overwrite files that already exist.
+    -s, --skip                       Skip files that already exist.
+    -d, --delete                     Delete files that have previously been generated with this generator.
+        --no-color                   Don't colorize the output
+    -h, --help                       Show this message
+        --debug                      Do not catch errors
+
+claco@mbp ~/burningplate.com/merb $ merb-gen model Restaurants[K
+Loading init file from /Users/claco/burningplate.com/Merb/config/init.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/development.rb
+Generating with model generator:
+[32m     [ADDED][0m  spec/models/restaurant_spec.rb
+[32m     [ADDED][0m  app/models/restaurant.rb
+[1;32mDon't forget to define the model schema in your Restaurant class[0m
+claco@mbp ~/burningplate.com/merb $ cls
+bash: cls: command not found
+claco@mbp ~/burningplate.com/merb $ rake[K[K[K[Kmerb-gen
+Usage: merb-gen generator_name [options] [args]
+
+Generate components for your application or entirely new applications.
+
+Available generators
+    app                              Generates a new "jump start" Merb application with support for DataMapper,
+    controller                       Generates a new controller.
+    core                             Generates a new Merb application with Ruby on Rails like structure.
+    flat                             Generates a new flat Merb application: all code in one file except for config files and
+    helper                           Generates a new helper.
+    layout                           Generates a new layout.
+    mailer                           Generates a mailer
+    migration                        Generates a new database migration.
+    model                            Generates a new model. You can specify an ORM different from what the rest
+    part                             Generates a new part controller.
+    plugin                           Generates a new Merb plugin.
+    resource                         Generates a new resource.
+    resource_controller              Generates a new resource controller.
+    session_migration                Generates a new session migration.
+    slice                            Generates a merb slice.
+    thor                             
+    very_flat                        Generates a new very flat Merb application: the whole application
+
+General options:
+    -p, --pretend                    Run, but do not make any changes.
+    -f, --force                      Overwrite files that already exist.
+    -s, --skip                       Skip files that already exist.
+    -d, --delete                     Delete files that have previously been generated with this generator.
+        --no-color                   Don't colorize the output
+    -h, --help                       Show this message
+        --debug                      Do not catch errors
+
+claco@mbp ~/burningplate.com/merb $ merb-gen migration
+Loading init file from /Users/claco/burningplate.com/Merb/config/init.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/development.rb
+Usage: merb-gen migration [options] [args]
+
+Generates a new database migration.
+
+
+Options specific for this generator:
+        --orm=value                  Object-Relation Mapper to use (one of: none, activerecord, datamapper, sequel)
+        --model                      Specify this option to generate a migration which creates a table for the provided model
+
+General options:
+    -p, --pretend                    Run, but do not make any changes.
+    -f, --force                      Overwrite files that already exist.
+    -s, --skip                       Skip files that already exist.
+    -d, --delete                     Delete files that have previously been generated with this generator.
+        --no-color                   Don't colorize the output
+    -h, --help                       Show this message
+        --debug                      Do not catch errors
+
+claco@mbp ~/burningplate.com/merb $ merb-gen migration restaurants
+Loading init file from /Users/claco/burningplate.com/Merb/config/init.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/development.rb
+Generating with migration generator:
+[32m     [ADDED][0m  schema/migrations/001_restaurants_migration.rb
+claco@mbp ~/burningplate.com/merb $ rake db:migrate:all
+(in /Users/claco/burningplate.com/Merb)
+Loading init file from /Users/claco/burningplate.com/Merb/config/init.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/development.rb
+rake aborted!
+Don't know how to build task 'db:migrate:all'
+
+(See full trace by running task with --trace)
+claco@mbp ~/burningplate.com/merb $ rake db:migrate:all[K[K[K[K
+(in /Users/claco/burningplate.com/Merb)
+Loading init file from /Users/claco/burningplate.com/Merb/config/init.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/development.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/rake.rb
+ ~ Connecting to database...
+ ~ Loaded slice 'MerbAuthSlicePassword' ...
+ ~ Parent pid: 617
+ ~ Could not load /Users/claco/burningplate.com/Merb/app/models/restaurant.rb:
+
+uninitialized constant Restaurant::Datetime - (NameError)
+
+/Library/Ruby/Gems/1.8/gems/rake-0.8.3/lib/rake.rb:2465:in `const_missing'
+/Users/claco/burningplate.com/Merb/app/models/restaurant.rb:7
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/bootloader.rb:865:in `load_file'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/bootloader.rb:1020:in `load_classes_with_requirements'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/bootloader.rb:1017:in `each'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/bootloader.rb:1017:in `load_classes_with_requirements'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/bootloader.rb:905:in `load_classes'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/bootloader.rb:643:in `run'
+/Library/Ruby/Gems/1.8/gems/extlib-0.9.10/lib/extlib/dictionary.rb:268:in `each'
+/Library/Ruby/Gems/1.8/gems/extlib-0.9.10/lib/extlib/dictionary.rb:268:in `each'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/bootloader.rb:641:in `run'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/bootloader.rb:99:in `run'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/server.rb:172:in `bootup'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/server.rb:42:in `start'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core.rb:170:in `start'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core.rb:183:in `start_environment'
+/Users/claco/burningplate.com/Merb/rakefile:24
+/Library/Ruby/Gems/1.8/gems/rake-0.8.3/lib/rake.rb:617:in `call'
+/Library/Ruby/Gems/1.8/gems/rake-0.8.3/lib/rake.rb:617:in `execute'
+/Library/Ruby/Gems/1.8/gems/rake-0.8.3/lib/rake.rb:612:in `each'
+/Library/Ruby/Gems/1.8/gems/rake-0.8.3/lib/rake.rb:612:in `execute'
+/Library/Ruby/Gems/1.8/gems/rake-0.8.3/lib/rake.rb:578:in `invoke_with_call_chain'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rake-0.8.3/lib/rake.rb:571:in `invoke_with_call_chain'
+/Library/Ruby/Gems/1.8/gems/rake-0.8.3/lib/rake.rb:588:in `invoke_prerequisites'
+/Library/Ruby/Gems/1.8/gems/rake-0.8.3/lib/rake.rb:585:in `each'
+/Library/Ruby/Gems/1.8/gems/rake-0.8.3/lib/rake.rb:585:in `invoke_prerequisites'
+/Library/Ruby/Gems/1.8/gems/rake-0.8.3/lib/rake.rb:577:in `invoke_with_call_chain'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rake-0.8.3/lib/rake.rb:571:in `invoke_with_call_chain'
+/Library/Ruby/Gems/1.8/gems/rake-0.8.3/lib/rake.rb:588:in `invoke_prerequisites'
+/Library/Ruby/Gems/1.8/gems/rake-0.8.3/lib/rake.rb:585:in `each'
+/Library/Ruby/Gems/1.8/gems/rake-0.8.3/lib/rake.rb:585:in `invoke_prerequisites'
+/Library/Ruby/Gems/1.8/gems/rake-0.8.3/lib/rake.rb:577:in `invoke_with_call_chain'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rake-0.8.3/lib/rake.rb:571:in `invoke_with_call_chain'
+/Library/Ruby/Gems/1.8/gems/rake-0.8.3/lib/rake.rb:588:in `invoke_prerequisites'
+/Library/Ruby/Gems/1.8/gems/rake-0.8.3/lib/rake.rb:585:in `each'
+/Library/Ruby/Gems/1.8/gems/rake-0.8.3/lib/rake.rb:585:in `invoke_prerequisites'
+/Library/Ruby/Gems/1.8/gems/rake-0.8.3/lib/rake.rb:577:in `invoke_with_call_chain'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rake-0.8.3/lib/rake.rb:571:in `invoke_with_call_chain'
+/Library/Ruby/Gems/1.8/gems/rake-0.8.3/lib/rake.rb:564:in `invoke'
+/Library/Ruby/Gems/1.8/gems/rake-0.8.3/lib/rake.rb:2019:in `invoke_task'
+/Library/Ruby/Gems/1.8/gems/rake-0.8.3/lib/rake.rb:1997:in `top_level'
+/Library/Ruby/Gems/1.8/gems/rake-0.8.3/lib/rake.rb:1997:in `each'
+/Library/Ruby/Gems/1.8/gems/rake-0.8.3/lib/rake.rb:1997:in `top_level'
+/Library/Ruby/Gems/1.8/gems/rake-0.8.3/lib/rake.rb:2036:in `standard_exception_handling'
+/Library/Ruby/Gems/1.8/gems/rake-0.8.3/lib/rake.rb:1991:in `top_level'
+/Library/Ruby/Gems/1.8/gems/rake-0.8.3/lib/rake.rb:1970:in `run'
+/Library/Ruby/Gems/1.8/gems/rake-0.8.3/lib/rake.rb:2036:in `standard_exception_handling'
+/Library/Ruby/Gems/1.8/gems/rake-0.8.3/lib/rake.rb:1967:in `run'
+/Library/Ruby/Gems/1.8/gems/rake-0.8.3/bin/rake:31
+/usr/bin/rake:19:in `load'
+/usr/bin/rake:19
+ ~ 
+ ~ [1;31;47mFATAL: /Users/claco/burningplate.com/Merb/app/models/restaurant.rb failed to load.[0m
+ ~ 
+claco@mbp ~/burningplate.com/merb $ merb
+Loading init file from /Users/claco/burningplate.com/Merb/config/init.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/development.rb
+ ~ Connecting to database...
+ ~ Loaded slice 'MerbAuthSlicePassword' ...
+ ~ Parent pid: 619
+ ~ Could not load /Users/claco/burningplate.com/Merb/app/models/restaurant.rb:
+
+uninitialized constant Restaurant::Datetime - (NameError)
+
+/Users/claco/burningplate.com/Merb/app/models/restaurant.rb:7
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/bootloader.rb:865:in `load_file'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/bootloader.rb:1020:in `load_classes_with_requirements'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/bootloader.rb:1017:in `each'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/bootloader.rb:1017:in `load_classes_with_requirements'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/bootloader.rb:905:in `load_classes'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/bootloader.rb:643:in `run'
+/Library/Ruby/Gems/1.8/gems/extlib-0.9.10/lib/extlib/dictionary.rb:268:in `each'
+/Library/Ruby/Gems/1.8/gems/extlib-0.9.10/lib/extlib/dictionary.rb:268:in `each'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/bootloader.rb:641:in `run'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/bootloader.rb:99:in `run'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/server.rb:172:in `bootup'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/server.rb:42:in `start'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core.rb:170:in `start'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/bin/merb:11
+/usr/bin/merb:19:in `load'
+/usr/bin/merb:19
+ ~ 
+ ~ [1;31;47mFATAL: /Users/claco/burningplate.com/Merb/app/models/restaurant.rb failed to load.[0m
+ ~ 
+claco@mbp ~/burningplate.com/merb $ merb
+Loading init file from /Users/claco/burningplate.com/Merb/config/init.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/development.rb
+ ~ Connecting to database...
+ ~ Loaded slice 'MerbAuthSlicePassword' ...
+ ~ Parent pid: 621
+ ~ Could not load /Users/claco/burningplate.com/Merb/app/models/restaurant.rb:
+
+uninitialized constant Restaurant::Datetime - (NameError)
+
+/Users/claco/burningplate.com/Merb/app/models/restaurant.rb:7
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/bootloader.rb:865:in `load_file'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/bootloader.rb:1020:in `load_classes_with_requirements'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/bootloader.rb:1017:in `each'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/bootloader.rb:1017:in `load_classes_with_requirements'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/bootloader.rb:905:in `load_classes'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/bootloader.rb:643:in `run'
+/Library/Ruby/Gems/1.8/gems/extlib-0.9.10/lib/extlib/dictionary.rb:268:in `each'
+/Library/Ruby/Gems/1.8/gems/extlib-0.9.10/lib/extlib/dictionary.rb:268:in `each'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/bootloader.rb:641:in `run'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/bootloader.rb:99:in `run'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/server.rb:172:in `bootup'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/server.rb:42:in `start'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core.rb:170:in `start'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/bin/merb:11
+/usr/bin/merb:19:in `load'
+/usr/bin/merb:19
+ ~ 
+ ~ [1;31;47mFATAL: /Users/claco/burningplate.com/Merb/app/models/restaurant.rb failed to load.[0m
+ ~ 
+claco@mbp ~/burningplate.com/merb $ merb
+Loading init file from /Users/claco/burningplate.com/Merb/config/init.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/development.rb
+ ~ Connecting to database...
+ ~ Loaded slice 'MerbAuthSlicePassword' ...
+ ~ Parent pid: 623
+ ~ Compiling routes...
+ ~ Activating slice 'MerbAuthSlicePassword' ...
+merb : worker (port 4000) ~ Starting Mongrel at port 4000
+merb : worker (port 4000) ~ Successfully bound to port 4000
+^C ~ Reaping Workers
+claco@mbp ~/burningplate.com/merb $ merbrake db:migrate:all
+(in /Users/claco/burningplate.com/Merb)
+Loading init file from /Users/claco/burningplate.com/Merb/config/init.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/development.rb
+rake aborted!
+Don't know how to build task 'db:migrate:all'
+
+(See full trace by running task with --trace)
+claco@mbp ~/burningplate.com/merb $ rake db:migrate:all[K[K[K[K
+(in /Users/claco/burningplate.com/Merb)
+Loading init file from /Users/claco/burningplate.com/Merb/config/init.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/development.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/rake.rb
+ ~ Connecting to database...
+ ~ Loaded slice 'MerbAuthSlicePassword' ...
+ ~ Parent pid: 626
+ ~ Compiling routes...
+ ~ Activating slice 'MerbAuthSlicePassword' ...
+ ~ unable to open database file
+rake aborted!
+unable to open database file
+
+(See full trace by running task with --trace)
+claco@mbp ~/burningplate.com/merb $ rake db:migrate
+(in /Users/claco/burningplate.com/Merb)
+Loading init file from /Users/claco/burningplate.com/Merb/config/init.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/development.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/rake.rb
+ ~ Connecting to database...
+ ~ Loaded slice 'MerbAuthSlicePassword' ...
+ ~ Parent pid: 630
+ ~ Compiling routes...
+ ~ Activating slice 'MerbAuthSlicePassword' ...
+ == Performing Up Migration #1: restaurants
+ -> 0.0000s
+claco@mbp ~/burningplate.com/merb $ pico db/development.db
+)07[?47h[1;40r[m[4l[?1h=[?1h=[?1h=[m[m[m[H[2J[7m  GNU nano 2.0.1                         File: db/development.db                                                        [3;1H[mSQLite format 3^@^D^@^A^A^@@  ^@^@^@^B^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^A^@^@^@^A^@^@^@^@^@^@^@^@^@^@^@^A^@^@^@^@^@^@^@^@^$[4;1H^C�^@^B^CP^@^CP^C�^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^$[5;1H^@^@^@^A^C�^@^C�^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^$[6;1H^A^B#restaurants[1B^@^@^@^A^C�^@^C�^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^$[38;39H[7m[ Read 5 lines (Converted from Mac format) ][1B^G[m Get Help[39;21H[7m^O[m WriteOut[39;41H[7m^R[m Read File[39;61H[7m^Y[m Prev Page[39;81H[7m^K[m Cut Text[39;101H[7m^C[m Cur Pos[1B[7m^X[m Exit[40;21H[7m^J[m Justify[40;41H[7m^W[m Where Is[40;61H[7m^V[m Next Page[40;81H[7m^U[m UnCut Text[7C[7m^T[m To Spell[37A[1B[1B[1B[1B[1B[31B[J[40;120H[40;1H[2J[?47l8[?1l>claco@mbp ~/burningplate.com/merb $ pico db/development.db[7Prake db:migrate
+(in /Users/claco/burningplate.com/Merb)
+Loading init file from /Users/claco/burningplate.com/Merb/config/init.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/development.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/rake.rb
+ ~ Connecting to database...
+ ~ Loaded slice 'MerbAuthSlicePassword' ...
+ ~ Parent pid: 637
+ ~ Compiling routes...
+ ~ Activating slice 'MerbAuthSlicePassword' ...
+claco@mbp ~/burningplate.com/merb $ sqlite db/development.db
+Unable to open database "db/development.db": file is encrypted or is not a database
+claco@mbp ~/burningplate.com/merb $ sqlite db/development.db3 db/development.db
+SQLite version 3.4.0
+Enter ".help" for instructions
+sqlite> .show tables
+     echo: off
+  explain: off
+  headers: off
+     mode: list
+nullvalue: ""
+   output: stdout
+separator: "|"
+    width: 
+sqlite> .tables
+migration_info
+sqlite> q[K.quit
+claco@mbp ~/burningplate.com/merb $ cls
+bash: cls: command not found
+claco@mbp ~/burningplate.com/merb $ clear
+[H[2Jclaco@mbp ~/burningplate.com/merb $ dm:db:automigraterdm:db:automigrateadm:db:automigratekdm:db:automigrateedm:db:automigrate dm:db:automigrate
+(in /Users/claco/burningplate.com/Merb)
+Loading init file from /Users/claco/burningplate.com/Merb/config/init.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/development.rb
+rake aborted!
+Don't know how to build task 'dm:db:automigrate'
+
+(See full trace by running task with --trace)
+claco@mbp ~/burningplate.com/merb $ rake dm:db:automigrate[1Pdb:automigrate[1Pdb:automigrate[1Pb:automigrate
+(in /Users/claco/burningplate.com/Merb)
+Loading init file from /Users/claco/burningplate.com/Merb/config/init.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/development.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/rake.rb
+ ~ Connecting to database...
+ ~ Loaded slice 'MerbAuthSlicePassword' ...
+ ~ Parent pid: 648
+ ~ Compiling routes...
+ ~ Activating slice 'MerbAuthSlicePassword' ...
+claco@mbp ~/burningplate.com/merb $ sqlite3 db/development.db
+SQLite version 3.4.0
+Enter ".help" for instructions
+sqlite> .tables
+migration_info  restaurants     sessions        users         
+sqlite> .show restaurants
+     echo: off
+  explain: off
+  headers: off
+     mode: list
+nullvalue: ""
+   output: stdout
+separator: "|"
+    width: 
+sqlite> select * from restaurants;
+sqlite> .show
+     echo: off
+  explain: off
+  headers: off
+     mode: list
+nullvalue: ""
+   output: stdout
+separator: "|"
+    width: 
+sqlite> .tab le[K[Klr[Ke
+migration_info  restaurants     sessions        users         
+sqlite> .table restaurants
+restaurants
+sqlite> .help
+.bail ON|OFF           Stop after hitting an error.  Default OFF
+.databases             List names and files of attached databases
+.dump ?TABLE? ...      Dump the database in an SQL text format
+.echo ON|OFF           Turn command echo on or off
+.exit                  Exit this program
+.explain ON|OFF        Turn output mode suitable for EXPLAIN on or off.
+.header(s) ON|OFF      Turn display of headers on or off
+.help                  Show this message
+.import FILE TABLE     Import data from FILE into TABLE
+.indices TABLE         Show names of all indices on TABLE
+.mode MODE ?TABLE?     Set output mode where MODE is one of:
+                         csv      Comma-separated values
+                         column   Left-aligned columns.  (See .width)
+                         html     HTML <table> code
+                         insert   SQL insert statements for TABLE
+                         line     One value per line
+                         list     Values delimited by .separator string
+                         tabs     Tab-separated values
+                         tcl      TCL list elements
+.nullvalue STRING      Print STRING in place of NULL values
+.output FILENAME       Send output to FILENAME
+.output stdout         Send output to the screen
+.prompt MAIN CONTINUE  Replace the standard prompts
+.quit                  Exit this program
+.read FILENAME         Execute SQL in FILENAME
+.schema ?TABLE?        Show the CREATE statements
+.separator STRING      Change separator used by output mode and .import
+.show                  Show the current values for various settings
+.tables ?PATTERN?      List names of tables matching a LIKE pattern
+.timeout MS            Try opening locked tables for MS milliseconds
+.width NUM NUM ...     Set column widths for "column" mode
+sqlite> .dump restaurants
+BEGIN TRANSACTION;
+CREATE TABLE "restaurants" ("id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, "name" VARCHAR(255) NOT NULL, "created" DATETIME NOT NULL, "updated" DATETIME NOT NULL);
+COMMIT;
+sqlite> .quit
+claco@mbp ~/burningplate.com/merb $ sqlite3 db/development.db[6Prake db:automigrate
+(in /Users/claco/burningplate.com/Merb)
+Loading init file from /Users/claco/burningplate.com/Merb/config/init.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/development.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/rake.rb
+ ~ Connecting to database...
+ ~ Loaded slice 'MerbAuthSlicePassword' ...
+ ~ Parent pid: 651
+ ~ Compiling routes...
+ ~ Activating slice 'MerbAuthSlicePassword' ...
+claco@mbp ~/burningplate.com/merb $ sqlite3 db/development.db
+SQLite version 3.4.0
+Enter ".help" for instructions
+sqlite> .dump [K[K[K[K.tables
+unknown command or invalid arguments:  ".tables". Enter ".help" for help
+sqlite> .tables
+restaurants  sessions     users      
+sqlite> .quit
+claco@mbp ~/burningplate.com/merb $ cls
+bash: cls: command not found
+claco@mbp ~/burningplate.com/merb $ cls
+bash: cls: command not found
+claco@mbp ~/burningplate.com/merb $ clear
+[H[2Jclaco@mbp ~/burningplate.com/merb $ merb -i
+Loading init file from /Users/claco/burningplate.com/Merb/config/init.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/development.rb
+ ~ Connecting to database...
+ ~ Loaded slice 'MerbAuthSlicePassword' ...
+ ~ Parent pid: 657
+ ~ Compiling routes...
+ ~ Activating slice 'MerbAuthSlicePassword' ...
+irb: warn: can't alias context from irb_context.
+>> .qu[K[K[Kquit()
+claco@mbp ~/burningplate.com/merb $ merb
+Loading init file from /Users/claco/burningplate.com/Merb/config/init.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/development.rb
+ ~ Connecting to database...
+ ~ Loaded slice 'MerbAuthSlicePassword' ...
+ ~ Parent pid: 659
+ ~ Compiling routes...
+ ~ Activating slice 'MerbAuthSlicePassword' ...
+merb : worker (port 4000) ~ Starting Mongrel at port 4000
+merb : worker (port 4000) ~ Successfully bound to port 4000
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 21:24:25 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ Params: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.008731, :after_filters_time=>1.9e-05, :before_filters_time=>0.00019, :action_time=>0.008205}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 21:24:31 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ Params: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.001965, :after_filters_time=>7.0e-06, :before_filters_time=>4.2e-05, :action_time=>0.001219}
+merb : worker (port 4000) ~ 
+
+^C ~ Reaping Workers
+claco@mbp ~/burningplate.com/merb $ cls
+bash: cls: command not found
+claco@mbp ~/burningplate.com/merb $ clear
+[H[2Jclaco@mbp ~/burningplate.com/merb $ merg-gen controller Restaurants[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Ksqlite3 db/development.db
+SQLite version 3.4.0
+Enter ".help" for instructions
+sqlite> .tables
+restaurants  sessions     users      
+sqlite> .quit
+claco@mbp ~/burningplate.com/merb $ cls
+bash: cls: command not found
+claco@mbp ~/burningplate.com/merb $ clear
+[H[2Jclaco@mbp ~/burningplate.com/merb $ merg-d[Kgen [K[K[K[K[K[Kb-gen controller
+Loading init file from /Users/claco/burningplate.com/Merb/config/init.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/development.rb
+Usage: merb-gen controller [options] [args]
+
+Generates a new controller.
+
+
+Options specific for this generator:
+        --testing-framework=value    Testing framework to use (one of: rspec, test_unit)
+        --template-engine=value      Template engine to use (one of: erb, haml, markaby, etc...)
+
+General options:
+    -p, --pretend                    Run, but do not make any changes.
+    -f, --force                      Overwrite files that already exist.
+    -s, --skip                       Skip files that already exist.
+    -d, --delete                     Delete files that have previously been generated with this generator.
+        --no-color                   Don't colorize the output
+    -h, --help                       Show this message
+        --debug                      Do not catch errors
+
+claco@mbp ~/burningplate.com/merb $ merb-gen controller restaurants
+Loading init file from /Users/claco/burningplate.com/Merb/config/init.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/development.rb
+Generating with controller generator:
+Loading /Users/claco/burningplate.com/Merb/config/environments/development.rb
+[32m     [ADDED][0m  app/controllers/restaurants.rb
+[32m     [ADDED][0m  app/views/restaurants/index.html.erb
+[32m     [ADDED][0m  spec/requests/restaurants_spec.rb
+[32m     [ADDED][0m  app/helpers/restaurants_helper.rb
+
+
+Don't forget to add request/controller tests first.
+claco@mbp ~/burningplate.com/merb $ merb-gen controller restaurants[K[K[K[K[K[K[K[K[K[K[KRestaurants
+Loading init file from /Users/claco/burningplate.com/Merb/config/init.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/development.rb
+Generating with controller generator:
+Loading /Users/claco/burningplate.com/Merb/config/environments/development.rb
+[34m [IDENTICAL][0m  app/controllers/restaurants.rb
+[34m [IDENTICAL][0m  app/views/restaurants/index.html.erb
+[34m [IDENTICAL][0m  spec/requests/restaurants_spec.rb
+[34m [IDENTICAL][0m  app/helpers/restaurants_helper.rb
+
+
+Don't forget to add request/controller tests first.
+claco@mbp ~/burningplate.com/merb $ merb
+Loading init file from /Users/claco/burningplate.com/Merb/config/init.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/development.rb
+ ~ Connecting to database...
+ ~ Loaded slice 'MerbAuthSlicePassword' ...
+ ~ Parent pid: 673
+ ~ Compiling routes...
+ ~ Activating slice 'MerbAuthSlicePassword' ...
+merb : worker (port 4000) ~ Starting Mongrel at port 4000
+merb : worker (port 4000) ~ Successfully bound to port 4000
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 21:26:56 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ Params: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.007931, :after_filters_time=>2.3e-05, :before_filters_time=>5.0e-05, :action_time=>0.007235}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 21:27:01 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"format"=>nil, "action"=>"index", "id"=>nil, "controller"=>"restaurants"}
+merb : worker (port 4000) ~ Params: {"format"=>nil, "action"=>"index", "id"=>nil, "controller"=>"restaurants"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.008179, :after_filters_time=>1.3e-05, :before_filters_time=>4.7e-05, :action_time=>0.006248}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 21:28:26 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ Params: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.003128, :after_filters_time=>1.0e-05, :before_filters_time=>0.000963, :action_time=>0.002603}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Executed all before worker shutdown callbacks...
+ ~ Compiling routes...
+ ~ Activating slice 'MerbAuthSlicePassword' ...
+merb : worker (port 4000) ~ Starting Mongrel at port 4000
+merb : worker (port 4000) ~ Successfully bound to port 4000
+merb : worker (port 4000) ~ Executed all before worker shutdown callbacks...
+ ~ Compiling routes...
+/Users/claco/burningplate.com/Merb/config/router.rb:44: bad value for range (ArgumentError)
+	from /Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/dispatch/router/behavior.rb:675:in `instance_eval'
+	from /Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/dispatch/router/behavior.rb:675:in `_with_proxy'
+	from /Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/dispatch/router.rb:105:in `prepare'
+	from /Users/claco/burningplate.com/Merb/config/router.rb:29
+	from /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+	from /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+	from /Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/bootloader.rb:865:in `load_file'
+	from /Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/bootloader.rb:1062:in `run'
+	from /Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/bootloader.rb:99:in `run'
+	from /Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/server.rb:172:in `bootup'
+	from /Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/server.rb:42:in `start'
+	from /Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core.rb:170:in `start'
+	from /Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/bin/merb:11
+	from /usr/bin/merb:19:in `load'
+	from /usr/bin/merb:19
+claco@mbp ~/burningplate.com/merb $ merb
+Loading init file from /Users/claco/burningplate.com/Merb/config/init.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/development.rb
+ ~ Connecting to database...
+ ~ Loaded slice 'MerbAuthSlicePassword' ...
+ ~ Parent pid: 687
+ ~ Compiling routes...
+/Users/claco/burningplate.com/Merb/config/router.rb:44: bad value for range (ArgumentError)
+	from /Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/dispatch/router/behavior.rb:675:in `instance_eval'
+	from /Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/dispatch/router/behavior.rb:675:in `_with_proxy'
+	from /Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/dispatch/router.rb:105:in `prepare'
+	from /Users/claco/burningplate.com/Merb/config/router.rb:29
+	from /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+	from /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+	from /Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/bootloader.rb:865:in `load_file'
+	from /Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/bootloader.rb:1062:in `run'
+	from /Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/bootloader.rb:99:in `run'
+	from /Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/server.rb:172:in `bootup'
+	from /Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/server.rb:42:in `start'
+	from /Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core.rb:170:in `start'
+	from /Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/bin/merb:11
+	from /usr/bin/merb:19:in `load'
+	from /usr/bin/merb:19
+claco@mbp ~/burningplate.com/merb $ merb
+Loading init file from /Users/claco/burningplate.com/Merb/config/init.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/development.rb
+ ~ Connecting to database...
+ ~ Loaded slice 'MerbAuthSlicePassword' ...
+ ~ Parent pid: 693
+ ~ Compiling routes...
+ ~ Activating slice 'MerbAuthSlicePassword' ...
+merb : worker (port 4000) ~ Starting Mongrel at port 4000
+merb : worker (port 4000) ~ Successfully bound to port 4000
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 21:43:16 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ Params: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.004941, :after_filters_time=>1.4e-05, :before_filters_time=>4.7e-05, :action_time=>0.004244}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 21:44:04 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ Params: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ Named route not found: restarants - (Merb::Router::GenerationError)
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/dispatch/router.rb:231:in `url'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/controller/merb_controller.rb:350:in `url'
+/Users/claco/burningplate.com/Merb/app/views/home/index.html.erb:3:in `__Users__claco__burningplate_com__Merb__app__views__home__index_html_erb'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/controller/mixins/render.rb:137:in `send'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/controller/mixins/render.rb:137:in `render'
+/Users/claco/burningplate.com/Merb/app/controllers/home.rb:4:in `index'
+/Library/Ruby/Gems/1.8/gems/merb-action-args-1.0.7/lib/merb-action-args/abstract_controller.rb:40:in `__send__'
+/Library/Ruby/Gems/1.8/gems/merb-action-args-1.0.7/lib/merb-action-args/abstract_controller.rb:40:in `_call_action'
+/Library/Ruby/Gems/1.8/gems/merb_datamapper-1.0.10/lib/merb_datamapper.rb:78:in `_call_action'
+/Library/Ruby/Gems/1.8/gems/dm-core-0.9.8/lib/dm-core.rb:181:in `repository'
+/Library/Ruby/Gems/1.8/gems/dm-core-0.9.8/lib/dm-core/repository.rb:44:in `scope'
+/Library/Ruby/Gems/1.8/gems/dm-core-0.9.8/lib/dm-core.rb:181:in `repository'
+/Library/Ruby/Gems/1.8/gems/merb_datamapper-1.0.10/lib/merb_datamapper.rb:76:in `_call_action'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/controller/abstract_controller.rb:289:in `_dispatch'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/controller/merb_controller.rb:252:in `_dispatch'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/dispatch/dispatcher.rb:100:in `dispatch_action'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/dispatch/dispatcher.rb:100:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/dispatch/dispatcher.rb:100:in `dispatch_action'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/dispatch/dispatcher.rb:74:in `handle'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/dispatch/dispatcher.rb:36:in `handle'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/rack/application.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/rack/middleware/static.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/rack/handler/mongrel.rb:82:in `process'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/rack/adapter/mongrel.rb:38:in `start_server'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/rack/adapter/abstract.rb:297:in `start_at_port'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/rack/adapter/abstract.rb:128:in `start'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/server.rb:174:in `bootup'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/server.rb:42:in `start'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core.rb:170:in `start'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/bin/merb:11
+/usr/bin/merb:19:in `load'
+/usr/bin/merb:19
+merb : worker (port 4000) ~ Params: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 21:44:14 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ Params: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.003168, :after_filters_time=>8.0e-06, :before_filters_time=>4.3e-05, :action_time=>0.002672}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 21:44:18 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ Params: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.003013, :after_filters_time=>7.0e-06, :before_filters_time=>5.7e-05, :action_time=>0.002563}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 21:44:25 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ Params: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ compile error
+/Users/claco/burningplate.com/Merb/app/views/home/index.html.erb:3: syntax error, unexpected '=', expecting kEND
+');  @_erb_buf.concat('');  =url(:restaurants) ; @_erb_buf.concat(''); 
+                             ^ - (SyntaxError)
+/Users/claco/burningplate.com/Merb/app/views/home/index.html.erb:5:in `compile_template'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/controller/template.rb:137:in `inline_template'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/controller/template.rb:76:in `template_for'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/controller/mixins/render.rb:458:in `_template_method_for'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/controller/mixins/render.rb:435:in `_template_for'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/controller/mixins/render.rb:426:in `reverse_each'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/controller/mixins/render.rb:426:in `_template_for'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/controller/mixins/render.rb:124:in `render'
+/Users/claco/burningplate.com/Merb/app/controllers/home.rb:4:in `index'
+/Library/Ruby/Gems/1.8/gems/merb-action-args-1.0.7/lib/merb-action-args/abstract_controller.rb:40:in `__send__'
+/Library/Ruby/Gems/1.8/gems/merb-action-args-1.0.7/lib/merb-action-args/abstract_controller.rb:40:in `_call_action'
+/Library/Ruby/Gems/1.8/gems/merb_datamapper-1.0.10/lib/merb_datamapper.rb:78:in `_call_action'
+/Library/Ruby/Gems/1.8/gems/dm-core-0.9.8/lib/dm-core.rb:181:in `repository'
+/Library/Ruby/Gems/1.8/gems/dm-core-0.9.8/lib/dm-core/repository.rb:44:in `scope'
+/Library/Ruby/Gems/1.8/gems/dm-core-0.9.8/lib/dm-core.rb:181:in `repository'
+/Library/Ruby/Gems/1.8/gems/merb_datamapper-1.0.10/lib/merb_datamapper.rb:76:in `_call_action'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/controller/abstract_controller.rb:289:in `_dispatch'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/controller/merb_controller.rb:252:in `_dispatch'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/dispatch/dispatcher.rb:100:in `dispatch_action'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/dispatch/dispatcher.rb:100:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/dispatch/dispatcher.rb:100:in `dispatch_action'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/dispatch/dispatcher.rb:74:in `handle'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/dispatch/dispatcher.rb:36:in `handle'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/rack/application.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/rack/middleware/static.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/rack/handler/mongrel.rb:82:in `process'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/rack/adapter/mongrel.rb:38:in `start_server'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/rack/adapter/abstract.rb:297:in `start_at_port'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/rack/adapter/abstract.rb:128:in `start'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/server.rb:174:in `bootup'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core/server.rb:42:in `start'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/lib/merb-core.rb:170:in `start'
+/Library/Ruby/Gems/1.8/gems/merb-core-1.0.10/bin/merb:11
+/usr/bin/merb:19:in `load'
+/usr/bin/merb:19
+merb : worker (port 4000) ~ Params: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 21:44:43 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ Params: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.003246, :after_filters_time=>6.0e-06, :before_filters_time=>4.6e-05, :action_time=>0.002431}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 21:44:47 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ Params: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.002234, :after_filters_time=>7.0e-06, :before_filters_time=>3.8e-05, :action_time=>0.001848}
+merb : worker (port 4000) ~ 
+
+^C ~ Reaping Workers
+claco@mbp ~/burningplate.com/merb $ merb
+Loading init file from /Users/claco/burningplate.com/Merb/config/init.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/development.rb
+ ~ Connecting to database...
+ ~ Loaded slice 'MerbAuthSlicePassword' ...
+ ~ Parent pid: 695
+ ~ Compiling routes...
+ ~ Activating slice 'MerbAuthSlicePassword' ...
+merb : worker (port 4000) ~ Starting Mongrel at port 4000
+merb : worker (port 4000) ~ Successfully bound to port 4000
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 21:45:07 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ Params: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.009724, :after_filters_time=>2.0e-05, :before_filters_time=>7.1e-05, :action_time=>0.009156}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 21:46:09 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ Params: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.003082, :after_filters_time=>7.0e-06, :before_filters_time=>3.5e-05, :action_time=>0.002542}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 21:46:16 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ Params: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.032901, :after_filters_time=>8.0e-06, :before_filters_time=>3.5e-05, :action_time=>0.032477}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 21:49:03 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ Params: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.00224, :after_filters_time=>6.0e-06, :before_filters_time=>3.6e-05, :action_time=>0.001842}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Executed all before worker shutdown callbacks...
+ ~ Compiling routes...
+ ~ Activating slice 'MerbAuthSlicePassword' ...
+merb : worker (port 4000) ~ Starting Mongrel at port 4000
+merb : worker (port 4000) ~ Successfully bound to port 4000
+^C ~ Reaping Workers
+claco@mbp ~/burningplate.com/merb $ merb
+Loading init file from /Users/claco/burningplate.com/Merb/config/init.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/development.rb
+ ~ Connecting to database...
+ ~ Loaded slice 'MerbAuthSlicePassword' ...
+ ~ Parent pid: 702
+ ~ Compiling routes...
+ ~ Activating slice 'MerbAuthSlicePassword' ...
+merb : worker (port 4000) ~ Starting Mongrel at port 4000
+merb : worker (port 4000) ~ Successfully bound to port 4000
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 21:51:24 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ Params: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.005145, :after_filters_time=>1.3e-05, :before_filters_time=>4.6e-05, :action_time=>0.004239}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 21:51:28 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ Params: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.003716, :after_filters_time=>7.0e-06, :before_filters_time=>4.8e-05, :action_time=>0.001568}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 21:51:29 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"format"=>nil, "action"=>"index", "id"=>nil, "controller"=>"restaurants"}
+merb : worker (port 4000) ~ Params: {"format"=>nil, "action"=>"index", "id"=>nil, "controller"=>"restaurants"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.007018, :after_filters_time=>1.3e-05, :before_filters_time=>5.1e-05, :action_time=>0.006485}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 21:51:33 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ Params: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.003233, :after_filters_time=>7.0e-06, :before_filters_time=>4.2e-05, :action_time=>0.002798}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 21:51:34 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"format"=>nil, "action"=>"index", "id"=>nil, "controller"=>"restaurants"}
+merb : worker (port 4000) ~ Params: {"format"=>nil, "action"=>"index", "id"=>nil, "controller"=>"restaurants"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.003169, :after_filters_time=>1.3e-05, :before_filters_time=>4.5e-05, :action_time=>0.002648}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 21:51:37 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ Params: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.00263, :after_filters_time=>7.0e-06, :before_filters_time=>0.000235, :action_time=>0.002223}
+merb : worker (port 4000) ~ 
+
+^^C^C ~ Reaping Workers
+claco@mbp ~/burningplate.com/merb $ merb
+Loading init file from /Users/claco/burningplate.com/Merb/config/init.rb
+Loading /Users/claco/burningplate.com/Merb/config/environments/development.rb
+ ~ Connecting to database...
+ ~ Loaded slice 'MerbAuthSlicePassword' ...
+ ~ Parent pid: 762
+ ~ Compiling routes...
+ ~ Activating slice 'MerbAuthSlicePassword' ...
+merb : worker (port 4000) ~ Starting Mongrel at port 4000
+merb : worker (port 4000) ~ Successfully bound to port 4000
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 21:59:22 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ Params: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.013841, :after_filters_time=>2.1e-05, :before_filters_time=>4.9e-05, :action_time=>0.013398}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 21:59:24 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ Params: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.003618, :after_filters_time=>7.0e-06, :before_filters_time=>4.0e-05, :action_time=>0.002562}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 21:59:27 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"format"=>nil, "action"=>"index", "id"=>nil, "controller"=>"restaurants"}
+merb : worker (port 4000) ~ Params: {"format"=>nil, "action"=>"index", "id"=>nil, "controller"=>"restaurants"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.036619, :after_filters_time=>1.2e-05, :before_filters_time=>4.3e-05, :action_time=>0.003734}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 22:01:30 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ Params: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.002624, :after_filters_time=>6.0e-06, :before_filters_time=>3.8e-05, :action_time=>0.002235}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 22:01:33 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ Params: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.005655, :after_filters_time=>7.0e-06, :before_filters_time=>3.7e-05, :action_time=>0.005022}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 22:01:34 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"format"=>nil, "action"=>"index", "id"=>nil, "controller"=>"restaurants"}
+merb : worker (port 4000) ~ Params: {"format"=>nil, "action"=>"index", "id"=>nil, "controller"=>"restaurants"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.00354, :after_filters_time=>7.0e-06, :before_filters_time=>4.3e-05, :action_time=>0.003052}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 22:01:42 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ Params: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.003179, :after_filters_time=>7.0e-06, :before_filters_time=>4.2e-05, :action_time=>0.002712}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 22:01:44 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"format"=>nil, "action"=>"index", "id"=>nil, "controller"=>"restaurants"}
+merb : worker (port 4000) ~ Params: {"format"=>nil, "action"=>"index", "id"=>nil, "controller"=>"restaurants"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.002791, :after_filters_time=>7.0e-06, :before_filters_time=>0.000413, :action_time=>0.002363}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 22:01:45 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ Params: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.002887, :after_filters_time=>1.0e-05, :before_filters_time=>4.8e-05, :action_time=>0.002375}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 22:01:46 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"format"=>nil, "action"=>"index", "id"=>nil, "controller"=>"restaurants"}
+merb : worker (port 4000) ~ Params: {"format"=>nil, "action"=>"index", "id"=>nil, "controller"=>"restaurants"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.00403, :after_filters_time=>8.0e-06, :before_filters_time=>4.9e-05, :action_time=>0.003474}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Executed all before worker shutdown callbacks...
+ ~ Compiling routes...
+ ~ Activating slice 'MerbAuthSlicePassword' ...
+merb : worker (port 4000) ~ Starting Mongrel at port 4000
+merb : worker (port 4000) ~ Successfully bound to port 4000
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 22:10:40 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ Params: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.007125, :after_filters_time=>1.4e-05, :before_filters_time=>6.7e-05, :action_time=>0.006665}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 22:10:41 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ Params: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.003256, :after_filters_time=>1.1e-05, :before_filters_time=>5.0e-05, :action_time=>0.002759}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 22:10:42 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"format"=>nil, "action"=>"index", "id"=>nil, "controller"=>"restaurants"}
+merb : worker (port 4000) ~ Params: {"format"=>nil, "action"=>"index", "id"=>nil, "controller"=>"restaurants"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.00573, :after_filters_time=>1.2e-05, :before_filters_time=>6.5e-05, :action_time=>0.005318}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 22:10:44 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ Params: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.003274, :after_filters_time=>1.0e-05, :before_filters_time=>0.000373, :action_time=>0.002849}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 22:10:49 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ Params: {"action"=>"index", "controller"=>"home"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.003498, :after_filters_time=>9.0e-06, :before_filters_time=>4.2e-05, :action_time=>0.002095}
+merb : worker (port 4000) ~ 
+
+merb : worker (port 4000) ~ Started request handling: Mon Mar 23 22:10:52 -0400 2009
+merb : worker (port 4000) ~ Routed to: {"format"=>nil, "action"=>"index", "id"=>nil, "controller"=>"restaurants"}
+merb : worker (port 4000) ~ Params: {"format"=>nil, "action"=>"index", "id"=>nil, "controller"=>"restaurants"}
+merb : worker (port 4000) ~ In repository block default
+merb : worker (port 4000) ~ {:dispatch_time=>0.002867, :after_filters_time=>6.0e-06, :before_filters_time=>3.7e-05, :action_time=>0.00173}
+merb : worker (port 4000) ~ 
+
+^C ~ Reaping Workers
+claco@mbp ~/burningplate.com/merb $ 
