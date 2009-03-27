@@ -1,0 +1,7 @@
+<% if @restaurants && @restaurants.length %>
+<div class="restaurants">
+	<% @restaurants.each do |@restaurant| %>
+		<%= render :partial => 'partials/restaurant' %>
+	<% end %>
+</div>
+<% end %>

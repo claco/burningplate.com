@@ -1,0 +1,5 @@
+<% if @restaurant %>
+<div class="restaurant">
+	<%=link_to h(@restaurant.name), restaurant_url(:id => @restaurant.id) %>
+</div>
+<% end %>
