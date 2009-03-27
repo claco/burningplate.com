@@ -56,6 +56,8 @@ sub startup {
     $r->route('/restaurants')
       ->to( controller => 'restaurants', action => 'index' )
       ->name('restaurants');
+
+    $r->route->to( controller => 'home', action => 'not_found' );
 }
 
 sub db {

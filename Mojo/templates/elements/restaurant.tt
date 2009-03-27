@@ -1,0 +1,5 @@
+[% IF restaurant %]
+<div class="restaurant">
+   <a href="[% c.url_for('restaurant', id => restaurant.id) %]">[% restaurant.name | html %]</a>
+</div>
+[% END %]

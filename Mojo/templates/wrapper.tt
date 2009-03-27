@@ -2,15 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>[% name %]: [% title %]</title>
+		<title>[% name | html %]: [% title | html %]</title>
 		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/reset/reset-min.css" />
 		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/base/base-min.css" />
 	</head>
 	<body>
 		<div id="container">
 			<div id="header">
-				<h1>[% name %]</h1>
-				<h2>[% title %]</h2>
+				<h1>[% name | html %]</h1>
+				<h2>[% title | html %]</h2>
 				<ul>
 				   <li><a href="[% c.url_for('home') %]">Home</a></li>
 				    <li><a href="[% c.url_for('restaurants') %]">Restaurants</a></li>

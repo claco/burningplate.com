@@ -1,0 +1,7 @@
+[% IF restaurants %]
+<div class="restaurants">
+	[% FOREACH restaurant IN restaurants %]
+		[% INCLUDE 'elements/restaurant.tt', restaurant = restaurant %]
+	[% END %]
+</div>
+[% END %]

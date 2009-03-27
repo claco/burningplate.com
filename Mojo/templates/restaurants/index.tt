@@ -1,1 +1,1 @@
-[% title = 'Restaurants' %]
+[% INCLUDE 'elements/restaurants.tt' %]

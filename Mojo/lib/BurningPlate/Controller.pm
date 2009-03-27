@@ -17,7 +17,7 @@ sub db {
     return $db;
 }
 
-sub table {
+sub model {
     my $self = shift;
     my $name = (ref $self) =~ /\:\:(.*)$/ ? $1 : '';
 
