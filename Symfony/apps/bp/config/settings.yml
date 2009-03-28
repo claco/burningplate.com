@@ -5,12 +5,11 @@ prod:
 
 dev:
   .settings:
-    error_reporting:        <?php echo (E_ALL | E_STRICT)."\n" ?>
-    web_debug:              on
+    error_reporting:        <?php echo (E_ALL)."\n" ?>
+    web_debug:              off
     cache:                  off
-    no_script_name:         off
+    no_script_name:         on
     etag:                   off
-    no_script_name: on
 
 test:
   .settings:
@@ -28,11 +27,9 @@ all:
     # Output escaping settings
     escaping_strategy:      false            # Determines how variables are made available to templates. Accepted values: on, off.
     escaping_method:        ESC_SPECIALCHARS # Function or helper used for escaping. Accepted values: ESC_RAW, ESC_ENTITIES, ESC_JS, ESC_JS_NO_ENTITIES, and ESC_SPECIALCHARS.
-
-#all:
-#  .actions:
-#    error_404_module:       default   # To be called when a 404 error is raised
-#    error_404_action:       error404  # Or when the requested URL doesn't match any route
+  .actions:
+    error_404_module:       home   # To be called when a 404 error is raised
+    error_404_action:       error404  # Or when the requested URL doesn't match any route
 #
 #    login_module:           default   # To be called when a non-authenticated user
 #    login_action:           login     # Tries to access a secure page

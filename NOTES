@@ -19,3 +19,5 @@ Merb is Rails lite, less friendly docs
 
 Symfony: oi. HAte all the sfClassName stuff. Directory structure seems all over the place compared to the others.
 "module" -> controller? shared models. yaml everywhere. oi.
+on the plus, models abstracted from the orm itself
+"slots"? seriously? More code. ugh. the old way wasn't broken for most poeple.

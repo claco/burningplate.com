@@ -19,4 +19,9 @@ class HomeActions extends sfActions
   {
 
   }
+  
+  public function executeError404(sfWebRequest $request)
+  {
+
+  }
 }

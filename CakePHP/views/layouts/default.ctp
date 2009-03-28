@@ -27,14 +27,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
         <?php echo $html->charset(); ?>
-		<title><?php echo Configure::read('Settings.name'); ?>: <?php echo h($title_for_layout); ?></title>
+		<title><?php echo h(Configure::read('Settings.name')); ?>: <?php echo h($title_for_layout); ?></title>
 		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/reset/reset-min.css" />
 		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/base/base-min.css" />
 	</head>
 	<body>
 		<div id="container">
 			<div id="header">
-				<h1><?php echo Configure::read('Settings.name'); ?></h1>
+				<h1><?php echo h(Configure::read('Settings.name')); ?></h1>
 				<h2><?php echo h($title_for_layout); ?></h2>
 				<ul>
 				    <li><?php echo $html->link('Home', array('controller' => 'pages', 'action' => 'display', 'home'))?></li>

@@ -17,6 +17,17 @@ class RestaurantsActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-
+      $this->getResponse()->setSlot('restaurants', RestaurantPeer::getAll());
+  }
+  
+  public function executeView(sfWebRequest $request) {
+      $id = $request->getParameter('id');
+      $restaurant = RestaurantPeer::getById($id);
+      
+      if ($restaurant) {
+          $this->getResponse()->setSlot('restaurant', $restaurant);
+      } else {
+          $this->getResponse()->setStatusCode(404);
+      }
   }
 }

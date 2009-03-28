@@ -2,3 +2,9 @@ propel:
   _attributes:
     package: lib.model
     defaultIdMethod: native
+  restaurants:
+    _attributes: { phpName: Restaurant }
+    id:
+    name: varchar(255)
+    created_at:
+    updated_at:
