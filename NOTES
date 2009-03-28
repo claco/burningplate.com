@@ -15,3 +15,7 @@ Django seems week on partial views. Custom tags are a pita compared to
 other frameworks partial views. includes work for simple issues.
 
 Merb is Rails lite, less friendly docs
+
+
+Symfony: oi. HAte all the sfClassName stuff. Directory structure seems all over the place compared to the others.
+"module" -> controller? shared models. yaml everywhere. oi.

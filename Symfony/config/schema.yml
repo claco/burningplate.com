@@ -1,0 +1,4 @@
+propel:
+  _attributes:
+    package: lib.model
+    defaultIdMethod: native

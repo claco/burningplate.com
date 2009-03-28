@@ -11,8 +11,14 @@
 			<div id="header">
 				<h1><?php echo sfConfig::get('app_name'); ?></h1>
 				<h2><?php echo $this->name ?></h2>
+				<ul>
+				    <li><?php echo link_to('Home', '@homepage') ?></li>
+				    <li><?php echo link_to('Restaurants', '@restaurants') ?></li>
+				    <li><?php echo link_to('Restaurants', '@restaurant?id=2') ?></li>
+				</ul>
 			</div>
 			<div id="content">
+			
 				<?php echo $sf_content ?>
 			</div>
 			<div id="footer">

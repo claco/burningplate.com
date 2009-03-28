@@ -1,0 +1,1 @@
+<?php $this->name = 'Restaurants'; ?>

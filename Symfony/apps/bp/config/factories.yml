@@ -1,3 +1,8 @@
+dev:
+  request:
+    param:
+      relative_url_root: /burningplate.com/Symfony
+
 prod:
   logger:
     class:   sfNoLogger
@@ -18,18 +23,18 @@ test:
     class: sfSessionTestStorage
     param:
       session_path: %SF_TEST_CACHE_DIR%/sessions
-
   response:
     class: sfWebResponse
     param:
       send_http_headers: false
-
+          
 all:
   routing:
     class: sfPatternRouting
     param:
       generate_shortest_url:            true
       extra_parameters_as_query_string: true
+
 
 #all:
 #  controller:

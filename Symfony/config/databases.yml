@@ -1,21 +1,19 @@
 dev:
   propel:
     param:
-      classname:  DebugPDO
-
+      classname: DebugPDO
 test:
   propel:
     param:
-      classname:  DebugPDO
-
+      classname: DebugPDO
 all:
   propel:
-    class:        sfPropelDatabase
+    class: sfPropelDatabase
     param:
-      classname:  PropelPDO
-      dsn:        mysql:dbname=.;host=localhost
-      username:   root
-      password:   
-      encoding:   utf8
+      classname: PropelPDO
+      dsn: 'sqlite:%SF_ROOT_DIR%/db/development.db'
+      username: root
+      password: null
+      encoding: utf8
       persistent: true
-      pooling:    true
+      pooling: true

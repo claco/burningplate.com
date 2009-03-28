@@ -10,6 +10,7 @@ dev:
     cache:                  off
     no_script_name:         off
     etag:                   off
+    no_script_name: on
 
 test:
   .settings:

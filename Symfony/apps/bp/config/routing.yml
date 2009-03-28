@@ -3,6 +3,14 @@ homepage:
   url:   /
   param: { module: Home, action: index }
 
+restaurants:
+    url: /restaurants
+    param: { module: Restaurants, action: index }
+
+restaurant:
+    url: /restaurants/:id
+    param: { module: Restaurants, action: view }
+
 default_index:
   url:   /:module
   param: { action: index }
