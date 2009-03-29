@@ -1,6 +1,7 @@
 class Restaurants < Application
 
   def index
+    @title = 'Restaurants'
     @restaurants = Restaurant.all
 
     render

@@ -1,6 +1,7 @@
 class RestaurantsController < ApplicationController
   
   def index
+    @title = 'Restaurants'
     @restaurants = Restaurant.all
   end
   

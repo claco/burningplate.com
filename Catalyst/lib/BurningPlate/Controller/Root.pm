@@ -28,7 +28,7 @@ BurningPlate::Controller::Root - Root Controller for BurningPlate
 
 sub index : Path : Args(0) {
     my ( $self, $c ) = @_;
-
+    $c->stash->{'title'} = 'Home';
 }
 
 sub default : Path {

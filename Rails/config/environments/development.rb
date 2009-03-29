@@ -15,3 +15,6 @@ config.action_controller.perform_caching             = false
 
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = false
+
+# local lighttpd dev
+config.action_controller.relative_url_root = '/burningplate.com/Rails'

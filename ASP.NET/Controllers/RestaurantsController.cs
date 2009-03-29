@@ -12,6 +12,7 @@ namespace BurningPlate.Controllers
     {
         public ActionResult Index()
         {
+            ViewData["Title"] = "Restaurants";
             IEnumerable<Restaurant> restaurants = Restaurants.All();
 
             return View(restaurants);

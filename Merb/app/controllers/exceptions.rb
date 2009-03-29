@@ -2,6 +2,7 @@ class Exceptions < Merb::Controller
   
   # handle NotFound exceptions (404)
   def not_found
+    @title = 'Resource Not Found'
     render :template => 'errors/404'
   end
 

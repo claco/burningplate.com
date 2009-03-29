@@ -60,8 +60,4 @@ sub startup {
     $r->route->to( controller => 'home', action => 'not_found' );
 }
 
-sub db {
-    return 'dddd';
-}
-
 1;

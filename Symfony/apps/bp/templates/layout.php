@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title><?php echo htmlentities(sfConfig::get('app_name')); ?>: <?php echo htmlentities($this->name) ?></title>
+		<title><?php echo htmlentities(sfConfig::get('app_name')); ?>: <?php echo htmlentities(get_slot('title')) ?></title>
 		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/reset/reset-min.css" />
 		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/base/base-min.css" />
 	</head>
@@ -10,7 +10,7 @@
 		<div id="container">
 			<div id="header">
 				<h1><?php echo htmlentities(sfConfig::get('app_name')); ?></h1>
-				<h2><?php echo htmlentities($this->name); ?></h2>
+				<h2><?php echo htmlentities(get_slot('title')); ?></h2>
 				<ul>
 				    <li><?php echo link_to('Home', '@homepage') ?></li>
 				    <li><?php echo link_to('Restaurants', '@restaurants') ?></li>

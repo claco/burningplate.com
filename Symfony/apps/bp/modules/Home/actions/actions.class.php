@@ -17,11 +17,11 @@ class HomeActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-
+      $this->getResponse()->setSlot('title', 'Home');
   }
   
   public function executeError404(sfWebRequest $request)
   {
-
+      $this->getResponse()->setSlot('title', 'Resource Not Found');
   }
 }

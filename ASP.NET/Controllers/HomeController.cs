@@ -11,6 +11,7 @@ namespace BurningPlate.Controllers
     {
         public ActionResult Index()
         {
+            ViewData["Title"] = "Home";
             return View();
         }
     }

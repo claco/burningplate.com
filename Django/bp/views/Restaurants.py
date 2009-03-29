@@ -9,8 +9,8 @@ def index(request):
     return render_to_response('restaurants/index.html', locals())
     
 def view(request, id):
-    notFound = True
     title = 'Restaurant Not Found'
+    notFound = True
 
     if id.isdigit():
         try:
