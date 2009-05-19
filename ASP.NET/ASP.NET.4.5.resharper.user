@@ -1,0 +1,779 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="livetemplates.csharp.usevar">True</setting>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Views/d:Home/f:Index.aspx" caret="179" fromTop="2" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Tests/d:Controllers/f:ApplicationControllerTests.cs" caret="1282" fromTop="26" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Tests/d:Controllers/f:AccountControllerTests.cs" caret="0" fromTop="0" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Controllers/f:AccountController.cs" caret="2197" fromTop="2" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Views/d:Account/f:Register.aspx" caret="0" fromTop="0" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Tests/d:Services/f:ServiceTests.cs" caret="0" fromTop="0" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Tests/d:Controllers/f:ControllerTests.cs" caret="0" fromTop="0" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Services/f:IRestaurantService.cs" caret="179" fromTop="8" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Tests/d:Controllers/f:HomeControllerTests.cs" caret="0" fromTop="0" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Tests/d:Repositories/f:RepositoryTests.cs" caret="0" fromTop="0" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Tests/d:Services/f:AuthenticationServiceTests.cs" caret="0" fromTop="0" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Models/f:BurningPlate.designer.cs" caret="1248" fromTop="37" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/f:Web.config" caret="2351" fromTop="20" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Tests/d:Repositories/f:SqlRestaurantRepositoryTests.cs" caret="640" fromTop="17" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Repositories/f:IRepository.cs" caret="0" fromTop="0" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Services/f:RestaurantService.cs" caret="549" fromTop="18" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Tests/d:Services/f:RestaurantServiceTests.cs" caret="433" fromTop="10" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Repositories/f:SqlRestaurantRepository.cs" caret="317" fromTop="10" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Models/f:Restaurant.cs" caret="85" fromTop="5" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Tests/d:Controllers/f:RestaurantsControllerTests.cs" caret="238" fromTop="0" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Views/d:Account/f:Login.aspx" caret="0" fromTop="0" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Views/d:Restaurants/f:View.aspx" caret="365" fromTop="7" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Repositories/f:IRestaurantRepository.cs" caret="0" fromTop="0" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Views/d:Restaurants/f:Index.aspx" caret="594" fromTop="11" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Controllers/f:ApplicationController.cs" caret="1324" fromTop="29" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Views/d:Shared/f:Site.Master" caret="751" fromTop="9" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/f:Global.asax.cs" caret="1976" fromTop="22" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Controllers/f:RestaurantsController.cs" caret="0" fromTop="0" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Views/d:Shared/d:Errors/f:404.aspx" caret="237" fromTop="4" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Models/f:Restaurant.cs" caret="85" fromTop="6" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Repositories/f:SqlRestaurantRepository.cs" caret="403" fromTop="11" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Repositories/f:SqlRestaurantRepository.cs" caret="1166" fromTop="31" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Repositories/f:SqlRestaurantRepository.cs" caret="1173" fromTop="35" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Tests/d:Repositories/f:SqlRestaurantRepositoryTests.cs" caret="1991" fromTop="22" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Repositories/f:SqlRestaurantRepository.cs" caret="1173" fromTop="37" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Repositories/f:IRepository.cs" caret="0" fromTop="0" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Services/f:RestaurantService.cs" caret="536" fromTop="16" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Tests/d:Services/f:RestaurantServiceTests.cs" caret="816" fromTop="16" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Tests/d:Controllers/f:RestaurantsControllerTests.cs" caret="874" fromTop="16" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Repositories/f:SqlRestaurantRepository.cs" caret="13" fromTop="0" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Repositories/f:SqlRestaurantRepository.cs" caret="537" fromTop="10" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Repositories/f:SqlRestaurantRepository.cs" caret="239" fromTop="8" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Repositories/f:SqlRestaurantRepository.cs" caret="726" fromTop="17" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Repositories/f:SqlRestaurantRepository.cs" caret="401" fromTop="12" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Models/f:Restaurant.cs" caret="85" fromTop="5" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Views/d:Account/f:Login.aspx" caret="0" fromTop="0" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Views/d:Restaurants/f:Index.aspx" caret="573" fromTop="12" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Views/d:Restaurants/f:Index.aspx" caret="574" fromTop="7" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Views/d:Restaurants/f:Index.aspx" caret="484" fromTop="6" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Views/d:Restaurants/f:View.aspx" caret="330" fromTop="4" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Controllers/f:ApplicationController.cs" caret="1382" fromTop="51" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Controllers/f:ApplicationController.cs" caret="1382" fromTop="41" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/f:Global.asax.cs" caret="2129" fromTop="26" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/f:Global.asax.cs" caret="1615" fromTop="16" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/f:Global.asax.cs" caret="1947" fromTop="20" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Views/d:Shared/d:Errors/f:404.aspx" caret="237" fromTop="4" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Controllers/f:ApplicationController.cs" caret="1382" fromTop="25" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Controllers/f:ApplicationController.cs" caret="1382" fromTop="15" />
+      <File id="A33B67B1-40D1-44CA-B243-5B9D08DFF504/d:Controllers/f:ApplicationController.cs" caret="1282" fromTop="17" />
+    </RecentEdits>
+  </RecentFiles>
+  <UnitTestRunner>
+    <Providers>
+      <MSTest>False</MSTest>
+    </Providers>
+  </UnitTestRunner>
+  <UnitTestRunnerMSTest>
+    <UseTestRunConfigFromMetadataFile>False</UseTestRunConfigFromMetadataFile>
+  </UnitTestRunnerMSTest>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="using" priority="91" />
+      <Item value="public" priority="32" />
+      <Item value="virtual" priority="0" />
+      <Item value="Controllers" priority="11" />
+      <Item value="System" priority="35" />
+      <Item value="Web" priority="25" />
+      <Item value="Mvc" priority="7" />
+      <Item value="Resources" priority="4" />
+      <Item value="IController" priority="3" />
+      <Item value="PropertyAttribute" priority="0" />
+      <Item value="protected" priority="16" />
+      <Item value="return" priority="46" />
+      <Item value="new" priority="102" />
+      <Item value="BurningPlate" priority="42" />
+      <Item value="RestaurantsController" priority="8" />
+      <Item value="Restaurants" priority="1" />
+      <Item value="RestaurantService" priority="4" />
+      <Item value="setup" priority="4" />
+      <Item value="Moq" priority="19" />
+      <Item value="var" priority="89" />
+      <Item value="Services" priority="12" />
+      <Item value="IRestaurantService" priority="4" />
+      <Item value="mockRestaurants" priority="0" />
+      <Item value="this" priority="22" />
+      <Item value="Controller" priority="64" />
+      <Item value="result" priority="40" />
+      <Item value="ViewResult" priority="8" />
+      <Item value="Mock" priority="27" />
+      <Item value="IView" priority="3" />
+      <Item value="controller" priority="5" />
+      <Item value="view" priority="6" />
+      <Item value="service" priority="7" />
+      <Item value="c" priority="16" />
+      <Item value="ActionResult" priority="3" />
+      <Item value="CollectionAssert" priority="4" />
+      <Item value="Models" priority="11" />
+      <Item value="typeof" priority="13" />
+      <Item value="Collections" priority="2" />
+      <Item value="Generic" priority="2" />
+      <Item value="Assert" priority="12" />
+      <Item value="restaurants" priority="5" />
+      <Item value="Restaurant" priority="23" />
+      <Item value="r" priority="28" />
+      <Item value="restaurant" priority="17" />
+      <Item value="test" priority="19" />
+      <Item value="StringAssert" priority="2" />
+      <Item value="HttpRequestBase" priority="5" />
+      <Item value="response" priority="5" />
+      <Item value="HttpContext" priority="4" />
+      <Item value="HttpRequest" priority="0" />
+      <Item value="ControllerContext" priority="8" />
+      <Item value="request" priority="12" />
+      <Item value="context" priority="29" />
+      <Item value="sc" priority="1" />
+      <Item value="override" priority="9" />
+      <Item value="Category" priority="0" />
+      <Item value="null" priority="9" />
+      <Item value="as" priority="2" />
+      <Item value="NUnit.Framework" priority="6" />
+      <Item value="T" priority="10" />
+      <Item value="base" priority="6" />
+      <Item value="void" priority="3" />
+      <Item value="T2" priority="0" />
+      <Item value="ControllerTests" priority="1" />
+      <Item value="AccountControllerTests" priority="1" />
+      <Item value="AccountController" priority="2" />
+      <Item value="false" priority="4" />
+      <Item value="NewsStyleUriParser" priority="1" />
+      <Item value="class" priority="10" />
+      <Item value="ViewDataDictionary" priority="0" />
+      <Item value="string" priority="20" />
+      <Item value="ViewData" priority="10" />
+      <Item value="static" priority="1" />
+      <Item value="View" priority="6" />
+      <Item value="Extensions" priority="0" />
+      <Item value="bool" priority="7" />
+      <Item value="GetHashCode" priority="0" />
+      <Item value="ViewModel" priority="0" />
+      <Item value="model" priority="35" />
+      <Item value="IsAuthenticated" priority="4" />
+      <Item value="SyntaxHelpers" priority="7" />
+      <Item value="Is" priority="48" />
+      <Item value="true" priority="10" />
+      <Item value="NUnit" priority="4" />
+      <Item value="Framework" priority="3" />
+      <Item value="Text" priority="9" />
+      <Item value="Expect" priority="41" />
+      <Item value="d" priority="1" />
+      <Item value="AppViewModel" priority="11" />
+      <Item value="Contains" priority="0" />
+      <Item value="Has" priority="0" />
+      <Item value="TestCase" priority="3" />
+      <Item value="Title" priority="6" />
+      <Item value="if" priority="27" />
+      <Item value="filterContext" priority="7" />
+      <Item value="String" priority="1" />
+      <Item value="_controller" priority="2" />
+      <Item value="value" priority="0" />
+      <Item value="RouteData" priority="5" />
+      <Item value="where" priority="2" />
+      <Item value="ControllerActionInvoker" priority="0" />
+      <Item value="FakeControllerContext" priority="0" />
+      <Item value="HttpResponse" priority="0" />
+      <Item value="httpContext" priority="9" />
+      <Item value="FakeContext" priority="2" />
+      <Item value="RouteValueDictionary" priority="1" />
+      <Item value="routeData" priority="0" />
+      <Item value="TextWriter" priority="2" />
+      <Item value="ViewEngines" priority="1" />
+      <Item value="IViewEngine" priority="3" />
+      <Item value="engine" priority="4" />
+      <Item value="e" priority="1" />
+      <Item value="engineResult" priority="4" />
+      <Item value="DefaultValue" priority="0" />
+      <Item value="er" priority="1" />
+      <Item value="ViewEngineResult" priority="0" />
+      <Item value="LinqToSqlShared" priority="0" />
+      <Item value="searchedLocations" priority="0" />
+      <Item value="SetUpFixtureAttribute" priority="0" />
+      <Item value="FakeViewEngine" priority="0" />
+      <Item value="Values" priority="0" />
+      <Item value="data" priority="1" />
+      <Item value="writer" priority="0" />
+      <Item value="viewContext" priority="1" />
+      <Item value="ViewContext" priority="0" />
+      <Item value="throw" priority="1" />
+      <Item value="AbandonedMutexException" priority="1" />
+      <Item value="NotImplementedException" priority="0" />
+      <Item value="Text.RegularExpressions" priority="0" />
+      <Item value="Regex" priority="1" />
+      <Item value="ApplicationController" priority="0" />
+      <Item value="a" priority="5" />
+      <Item value="IActionFilter" priority="0" />
+      <Item value="ActionExecutedContext" priority="2" />
+      <Item value="FakeActionExecutedContext" priority="4" />
+      <Item value="m" priority="5" />
+      <Item value="FakeViewModel" priority="2" />
+      <Item value="ContentResult" priority="0" />
+      <Item value="RequestContext" priority="2" />
+      <Item value="RedirectToRouteResult" priority="1" />
+      <Item value="RedirectToRoute" priority="3" />
+      <Item value="modelState" priority="3" />
+      <Item value="Membership" priority="8" />
+      <Item value="ServiceTests" priority="1" />
+      <Item value="IMembershipService" priority="7" />
+      <Item value="Service" priority="12" />
+      <Item value="isnn" priority="1" />
+      <Item value="MembershipServiceTests" priority="0" />
+      <Item value="MembershipService" priority="3" />
+      <Item value="repository" priority="6" />
+      <Item value="Repositories" priority="7" />
+      <Item value="IMembershipRepository" priority="0" />
+      <Item value="Repository" priority="14" />
+      <Item value="userName" priority="12" />
+      <Item value="Dictionary" priority="0" />
+      <Item value="Security" priority="8" />
+      <Item value="provider" priority="4" />
+      <Item value="Provider" priority="1" />
+      <Item value="password" priority="4" />
+      <Item value="MembershipProvider" priority="3" />
+      <Item value="p" priority="4" />
+      <Item value="s" priority="3" />
+      <Item value="membership" priority="1" />
+      <Item value="else" priority="8" />
+      <Item value="ModelBinders" priority="0" />
+      <Item value="ModelState" priority="15" />
+      <Item value="ExpectedException" priority="0" />
+      <Item value="ArgumentException" priority="1" />
+      <Item value="IAuthenticationService" priority="4" />
+      <Item value="FormsAuthentication" priority="3" />
+      <Item value="remember" priority="1" />
+      <Item value="WindowsAuthenticationModule" priority="0" />
+      <Item value="forms" priority="1" />
+      <Item value="AuthenticationService" priority="1" />
+      <Item value="authentication" priority="2" />
+      <Item value="private" priority="2" />
+      <Item value="_authentication" priority="4" />
+      <Item value="_membership" priority="6" />
+      <Item value="Authentication" priority="1" />
+      <Item value="_provider" priority="4" />
+      <Item value="Console" priority="0" />
+      <Item value="Times" priority="0" />
+      <Item value="It" priority="0" />
+      <Item value="MembershipCreateStatus" priority="14" />
+      <Item value="out" priority="1" />
+      <Item value="emailAddress" priority="2" />
+      <Item value="status" priority="5" />
+      <Item value="switch" priority="1" />
+      <Item value="case" priority="1" />
+      <Item value="break" priority="2" />
+      <Item value="default" priority="0" />
+      <Item value="SetUp" priority="0" />
+      <Item value="ref" priority="4" />
+      <Item value="Protected" priority="0" />
+      <Item value="Stub" priority="1" />
+      <Item value="RestaurantsContollerTests" priority="1" />
+      <Item value="EqualTo" priority="0" />
+      <Item value="GetType" priority="1" />
+      <Item value="IList" priority="0" />
+      <Item value="RestaurantsServiceTests" priority="0" />
+      <Item value="List" priority="0" />
+      <Item value="Id" priority="2" />
+      <Item value="Name" priority="6" />
+      <Item value="int" priority="2" />
+      <Item value="id" priority="7" />
+      <Item value="HttpResponseBase" priority="0" />
+      <Item value="Response" priority="1" />
+      <Item value="fakeResponse" priority="1" />
+      <Item value="IRestaurantRepository" priority="8" />
+      <Item value="Linq" priority="2" />
+      <Item value="IQueryable" priority="2" />
+      <Item value="GetById" priority="0" />
+      <Item value="IRepository" priority="2" />
+      <Item value="NinjectControllerFactory" priority="1" />
+      <Item value="Tests" priority="2" />
+      <Item value="Ninject" priority="3" />
+      <Item value="StandardKernel" priority="0" />
+      <Item value="Binding" priority="3" />
+      <Item value="BindingMetadata" priority="1" />
+      <Item value="kernel" priority="2" />
+      <Item value="Syntax" priority="0" />
+      <Item value="Injection" priority="0" />
+      <Item value="factory" priority="1" />
+      <Item value="MockBehavior" priority="1" />
+      <Item value="internal" priority="2" />
+      <Item value="Bind" priority="4" />
+      <Item value="NinjectHttpApplication" priority="1" />
+      <Item value="NinjectSettings" priority="0" />
+      <Item value="Modules" priority="0" />
+      <Item value="_list" priority="2" />
+      <Item value="TestMembershipProvider" priority="0" />
+      <Item value="username" priority="1" />
+      <Item value="TearDown" priority="0" />
+      <Item value="Model" priority="7" />
+      <Item value="routes" priority="1" />
+      <Item value="object" priority="0" />
+      <Item value="SqlMembershipProvider" priority="1" />
+      <Item value="AcceptVerbs" priority="1" />
+      <Item value="HttpVerbs" priority="1" />
+      <Item value="RegexOptions" priority="0" />
+      <Item value="matches" priority="2" />
+      <Item value="Html" priority="10" />
+      <Item value="ValidateAntiForgeryToken" priority="0" />
+      <Item value="Salt" priority="0" />
+      <Item value="Data" priority="7" />
+      <Item value="Transactions" priority="0" />
+      <Item value="TransactionScope" priority="2" />
+      <Item value="RepositoryTests" priority="1" />
+      <Item value="SqlRestaurantRepositoryTests" priority="0" />
+      <Item value="ExpectedExceptionAttribute" priority="1" />
+      <Item value="TestBase" priority="0" />
+      <Item value="ITransactionPromoter" priority="0" />
+      <Item value="Configuration" priority="0" />
+      <Item value="ConnectionStringSettings" priority="0" />
+      <Item value="ConfigurationManager" priority="0" />
+      <Item value="XmlMappingSource" priority="3" />
+      <Item value="IFunctionResult" priority="1" />
+      <Item value="Diagnostics" priority="0" />
+      <Item value="Debug" priority="0" />
+      <Item value="AssemblyLoadEventArgs" priority="0" />
+      <Item value="ResourceSet" priority="0" />
+      <Item value="ResourceManager" priority="0" />
+      <Item value="Assembly" priority="0" />
+      <Item value="mapping" priority="0" />
+      <Item value="stream" priority="0" />
+      <Item value="BurningPlateDataContext" priority="3" />
+      <Item value="from" priority="6" />
+      <Item value="select" priority="3" />
+      <Item value="results" priority="1" />
+      <Item value="IdnElement" priority="1" />
+      <Item value="Created" priority="0" />
+      <Item value="Updated" priority="0" />
+      <Item value="DateTime" priority="1" />
+      <Item value="Guid" priority="6" />
+      <Item value="_context" priority="1" />
+      <Item value="foreach" priority="0" />
+      <Item value="Url" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:BurningPlate.Tests.RestaurantsControllerTests">
+      <Item value="Controller" priority="7" />
+      <Item value="Service" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:BurningPlate.Controllers.RestaurantsController">
+      <Item value="Index" priority="2" />
+      <Item value="ControllerContext" priority="6" />
+      <Item value="View" priority="1" />
+      <Item value="Request" priority="0" />
+      <Item value="Response" priority="1" />
+      <Item value="HttpContext" priority="5" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.Mvc.ControllerContext">
+      <Item value="Controller" priority="6" />
+      <Item value="HttpContext" priority="10" />
+      <Item value="RequestContext" priority="3" />
+      <Item value="RouteData" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Moq.Mock`1">
+      <Item value="Object" priority="29" />
+      <Item value="SetupGet" priority="0" />
+      <Item value="SetupProperty" priority="5" />
+      <Item value="VerifySet" priority="0" />
+      <Item value="Setup" priority="38" />
+      <Item value="DefaultValue" priority="1" />
+      <Item value="SetupAllProperties" priority="0" />
+      <Item value="Verify" priority="9" />
+      <Item value="VerifyAll" priority="2" />
+      <Item value="Behavior" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NUnit.Framework.CollectionAssert">
+      <Item value="AllItemsAreInstancesOfType" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.Mvc.ViewResult">
+      <Item value="ViewData" priority="17" />
+      <Item value="View" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.Mvc.ViewDataDictionary">
+      <Item value="Model" priority="29" />
+      <Item value="Title" priority="0" />
+      <Item value="ModelState" priority="3" />
+      <Item value="IsReadOnly" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NUnit.Framework.Assert">
+      <Item value="IsInstanceOfType" priority="0" />
+      <Item value="AreEqual" priority="3" />
+      <Item value="IsNull" priority="0" />
+      <Item value="Contains" priority="0" />
+      <Item value="IsFalse" priority="2" />
+      <Item value="IsTrue" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:BurningPlate.Services.IRestaurantService">
+      <Item value="GetById" priority="2" />
+      <Item value="All" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Moq.Language.Flow.ISetupGetter`2">
+      <Item value="Returns" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:BurningPlate.Models.Restaurant">
+      <Item value="Name" priority="6" />
+      <Item value="Id" priority="11" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NUnit.Framework.StringAssert">
+      <Item value="Contains" priority="1" />
+      <Item value="IsMatch" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Object">
+      <Item value="ToString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.HttpResponseBase">
+      <Item value="StatusCode" priority="8" />
+      <Item value="Output" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.HttpContextBase">
+      <Item value="Response" priority="5" />
+      <Item value="Request" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Moq.Language.Flow.ISetup`2">
+      <Item value="Returns" priority="25" />
+      <Item value="Verifiable" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:BurningPlate.Tests.ControllerTests`1">
+      <Item value="Controller" priority="2" />
+      <Item value="SetUp" priority="0" />
+      <Item value="FakeContext" priority="0" />
+      <Item value="FakeActionExecutedContext" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:BurningPlate.Controllers.AccountController">
+      <Item value="Login" priority="3" />
+      <Item value="ControllerContext" priority="1" />
+      <Item value="ViewData" priority="9" />
+      <Item value="ModelState" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.Mvc.RedirectToRouteResult">
+      <Item value="RouteName" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:BurningPlate.Controllers.CustomDataDictionary">
+      <Item value="Title" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:BurningPlate.Controllers.ViewModel">
+      <Item value="IsAuthenticated" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.Mvc.ModelStateDictionary">
+      <Item value="ContainsKey" priority="0" />
+      <Item value="IsValid" priority="4" />
+      <Item value="IsValidField" priority="0" />
+      <Item value="AddModelError" priority="6" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.Mvc.ModelState">
+      <Item value="Errors" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.Mvc.ModelError">
+      <Item value="ToString" priority="0" />
+      <Item value="ErrorMessage" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NUnit.Framework.SyntaxHelpers.Text">
+      <Item value="Contains" priority="2" />
+      <Item value="EndsWith" priority="4" />
+      <Item value="Matches" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NUnit.Framework.Constraints.Constraint">
+      <Item value="Within" priority="0" />
+      <Item value="IgnoreCase" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NUnit.Framework.SyntaxHelpers.Is">
+      <Item value="True" priority="3" />
+      <Item value="EqualTo" priority="14" />
+      <Item value="Empty" priority="3" />
+      <Item value="Not" priority="0" />
+      <Item value="InstanceOfType" priority="7" />
+      <Item value="False" priority="2" />
+      <Item value="All" priority="1" />
+      <Item value="TypeOf" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:BurningPlate.Controllers.HomeController">
+      <Item value="Index" priority="1" />
+      <Item value="ActionInvoker" priority="1" />
+      <Item value="ViewData" priority="0" />
+      <Item value="View" priority="0" />
+      <Item value="ControllerContext" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.Mvc.ActionExecutedContext">
+      <Item value="Result" priority="0" />
+      <Item value="Controller" priority="6" />
+      <Item value="HttpContext" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.Mvc.ControllerBase">
+      <Item value="ViewData" priority="3" />
+      <Item value="ToString" priority="1" />
+      <Item value="ControllerContext" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:BurningPlate.Controllers.AppViewModel">
+      <Item value="Title" priority="14" />
+      <Item value="IsAuthenticated" priority="9" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="IsNullOrEmpty" priority="8" />
+      <Item value="Empty" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.Mvc.IActionInvoker">
+      <Item value="InvokeAction" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:T">
+      <Item value="ControllerContext" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.Routing.RouteData">
+      <Item value="DataTokens" priority="0" />
+      <Item value="Route" priority="0" />
+      <Item value="Values" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Web.Mvc.ViewEngines">
+      <Item value="Engines" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.Mvc.ViewEngineCollection">
+      <Item value="Clear" priority="0" />
+      <Item value="Add" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.Mvc.IViewEngine">
+      <Item value="FindView" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.Mvc.ViewEngineResult">
+      <Item value="View" priority="0" />
+      <Item value="ViewEngine" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:BurningPlate.Tests.FakeViewEngineResult">
+      <Item value="View" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.Routing.RouteValueDictionary">
+      <Item value="Add" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.Routing.RequestContext">
+      <Item value="HttpContext" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.Mvc.IView">
+      <Item value="Render" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.Mvc.ViewContext">
+      <Item value="View" priority="0" />
+      <Item value="ViewData" priority="0" />
+      <Item value="Controller" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Text.RegularExpressions.Regex">
+      <Item value="Replace" priority="0" />
+      <Item value="Match" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.Mvc.IActionFilter">
+      <Item value="OnActionExecuted" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:BurningPlate.Controllers.ApplicationController">
+      <Item value="ModelState" priority="1" />
+      <Item value="ViewData" priority="6" />
+      <Item value="Response" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.HttpRequestBase">
+      <Item value="IsAuthenticated" priority="4" />
+      <Item value="Form" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:BurningPlate.Services.IMembershipService">
+      <Item value="ValidateUser" priority="4" />
+      <Item value="CreateUser" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.Security.MembershipProvider">
+      <Item value="ValidateUser" priority="5" />
+      <Item value="CreateUser" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Web.Security.FormsAuthentication">
+      <Item value="SetAuthCookie" priority="0" />
+      <Item value="SignOut" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:BurningPlate.Services.IAuthenticationService">
+      <Item value="SignIn" priority="5" />
+      <Item value="SignOut" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Console">
+      <Item value="WriteLine" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Moq.Times">
+      <Item value="Once" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Moq.It">
+      <Item value="Is" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Moq.Language.Flow.IReturnsResult`1">
+      <Item value="Verifiable" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Specialized.NameValueCollection">
+      <Item value="Add" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Web.Security.MembershipCreateStatus">
+      <Item value="InvalidUserName" priority="2" />
+      <Item value="ProviderError" priority="3" />
+      <Item value="InvalidPassword" priority="2" />
+      <Item value="InvalidEmail" priority="2" />
+      <Item value="InvalidAnswer" priority="0" />
+      <Item value="DuplicateEmail" priority="3" />
+      <Item value="Success" priority="4" />
+      <Item value="DuplicateUserName" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.Security.MembershipCreateStatus">
+      <Item value="ToString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Nullable`1">
+      <Item value="HasValue" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:BurningPlate.Repositories.IRestaurantRepository">
+      <Item value="Restaurants" priority="3" />
+      <Item value="GetById" priority="2" />
+      <Item value="All" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Linq.IQueryable`1">
+      <Item value="All" priority="1" />
+      <Item value="SingleOrDefault" priority="4" />
+      <Item value="ToList" priority="2" />
+      <Item value="Where" priority="0" />
+      <Item value="First" priority="0" />
+      <Item value="WithId" priority="0" />
+      <Item value="FirstOrDefault" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
+      <Item value="AsQueryable" priority="0" />
+      <Item value="First" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Ninject.StandardKernel">
+      <Item value="AddBinding" priority="2" />
+      <Item value="Settings" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Ninject.Web.Mvc.NinjectControllerFactory">
+      <Item value="CreateController" priority="0" />
+      <Item value="Kernel" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Moq.MockBehavior">
+      <Item value="Loose" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Ninject.Syntax.IBindingToSyntax`1">
+      <Item value="To" priority="4" />
+      <Item value="ToProvider" priority="0" />
+      <Item value="ToMethod" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Ninject.IKernel">
+      <Item value="Components" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Ninject.Components.IComponentContainer">
+      <Item value="Add" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Ninject.Syntax.IBindingWhenInNamedWithOrOnSyntax`1">
+      <Item value="InTransientScope" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Ninject.Syntax.IBindingNamedWithOrOnSyntax`1">
+      <Item value="Named" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IList`1">
+      <Item value="AsQueryable" priority="2" />
+      <Item value="Count" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.Routing.RouteCollection">
+      <Item value="Add" priority="0" />
+      <Item value="MapRoute" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Web.Mvc.HttpVerbs">
+      <Item value="Post" priority="0" />
+      <Item value="Get" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Text.RegularExpressions.Match">
+      <Item value="Captures" priority="1" />
+      <Item value="Groups" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Text.RegularExpressions.Capture">
+      <Item value="Value" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Text.RegularExpressions.Group">
+      <Item value="Captures" priority="0" />
+      <Item value="Value" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Text.RegularExpressions.RegexOptions">
+      <Item value="IgnoreCase" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.Mvc.HtmlHelper`1">
+      <Item value="BeginForm" priority="0" />
+      <Item value="BeginRouteForm" priority="0" />
+      <Item value="EndForm" priority="0" />
+      <Item value="TextBox" priority="0" />
+      <Item value="ValidationMessage" priority="0" />
+      <Item value="ViewData" priority="0" />
+      <Item value="AntiForgeryToken" priority="0" />
+      <Item value="CheckBox" priority="0" />
+      <Item value="ValidationSummary" priority="1" />
+      <Item value="Password" priority="0" />
+      <Item value="Encode" priority="1" />
+      <Item value="RouteLink" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Web.Security.Membership">
+      <Item value="Provider" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Configuration.ConfigurationManager">
+      <Item value="ConnectionStrings" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Configuration.ConnectionStringSettings">
+      <Item value="ConnectionString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Data.Linq.Mapping.XmlMappingSource">
+      <Item value="FromUrl" priority="1" />
+      <Item value="FromStream" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.Linq.DataContext">
+      <Item value="GetTable" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.Linq.Table`1">
+      <Item value="SingleOrDefault" priority="1" />
+      <Item value="InsertOnSubmit" priority="0" />
+      <Item value="Where" priority="0" />
+      <Item value="Select" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.Linq.Mapping.XmlMappingSource">
+      <Item value="ToString" priority="0" />
+      <Item value="GetModel" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Diagnostics.Debug">
+      <Item value="WriteLine" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Reflection.Assembly">
+      <Item value="GetExecutingAssembly" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Reflection.Assembly">
+      <Item value="GetManifestResourceStream" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.Linq.Mapping.MetaModel">
+      <Item value="DatabaseName" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:BurningPlate.Data.BurningPlateDataContext">
+      <Item value="Restaurants" priority="5" />
+      <Item value="GetTable" priority="0" />
+      <Item value="SubmitChanges" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:BurningPlate.Data.Restaurant">
+      <Item value="Id" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.DateTime">
+      <Item value="UtcNow" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Guid">
+      <Item value="NewGuid" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Guid">
+      <Item value="Equals" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:BurningPlate.Controllers.RestaurantsViewModel">
+      <Item value="Restaurants" priority="1" />
+      <Item value="Restaurant" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.Mvc.UrlHelper">
+      <Item value="RouteUrl" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>

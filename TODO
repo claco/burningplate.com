@@ -16,3 +16,20 @@ Restaurants
   - html encoding
   - menu/route based links
   - 404 restaurant not found by number and when not int
+  
+Authentication Part I
+  - users schema/table: id, emailAddress, password, recoveryToken, confirmed, created (UTC), updated (UTC)
+  - users model
+	or
+  - built-in framework authentication/membership if available
+  - account controller: login, logout, register
+  - login form partial
+  - register form partial
+  - login, logout, register views
+
+Authentication Part II
+  - password recovery
+  - password change
+  - account controller: reset, change
+  - reset/change partials
+  - reset/change views

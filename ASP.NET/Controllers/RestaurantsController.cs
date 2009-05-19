@@ -1,37 +1,43 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using System.Web.Mvc.Ajax;
-using BurningPlate.Models;
+using BurningPlate.Services;
 
 namespace BurningPlate.Controllers
 {
-    public class RestaurantsController : ApplicationController
+    public class RestaurantsController : Controller
     {
-        public ActionResult Index()
+        public RestaurantsController(IRestaurantService service)
         {
-            ViewData["Title"] = "Restaurants";
-            IEnumerable<Restaurant> restaurants = Restaurants.All();
-
-            return View(restaurants);
+            Service = service;            
         }
 
-        public ActionResult View(int? id)
+        protected IRestaurantService Service { get; set; }
+
+        public ActionResult Index()
         {
-            Restaurant restaurant = id.HasValue ? Restaurants.GetById(id.Value) : null;
+            ViewData.Model = new RestaurantsViewModel {Title = "Restaurants", Restaurants = Service.All()};
 
-            if (restaurant == null)
-            {
-                return new HttpNotFoundResult("Restaurant Not Found");
-            }
-            else
-            {
-                ViewData["Title"] = restaurant.Name;
+            return View();
+        }
 
-                return View(restaurant);
+        public ActionResult View(Guid? id)
+        {
+            if (id.HasValue)
+            {
+                var restaurant = Service.GetById(id.Value);
+
+                if (restaurant != null)
+                {
+                    ViewData.Model = new RestaurantsViewModel { Title = restaurant.Name, Restaurant = restaurant };
+
+                    return View();
+                }   
             }
+
+            ViewData.Model = new RestaurantsViewModel { Title = "Restaurant Not Found"};
+            Response.StatusCode = 404;
+
+            return View();
         }
     }
 }

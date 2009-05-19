@@ -1,38 +1,43 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using System.Web.Mvc.Ajax;
+using System.Text.RegularExpressions;
 
 namespace BurningPlate.Controllers
 {
     public class ApplicationController : Controller
     {
+        protected override void OnActionExecuted(ActionExecutedContext filterContext)
+        {
+
+            var model = (AppViewModel) filterContext.Controller.ViewData.Model;
+
+            // Ensure we always have a view model
+            if (model == null)
+            {
+                model = new AppViewModel();
+                filterContext.Controller.ViewData.Model = model;
+            }
+
+            // Ensure we always have a page title
+            if (String.IsNullOrEmpty(model.Title))
+            {
+                var matches = Regex.Match(filterContext.Controller.ToString(), "\\.([a-z]*)Controller\\Z", RegexOptions.IgnoreCase);
+                model.Title = matches.Groups[1].Value;
+            }
+
+            // Set IsAuthenticated, unless it's already true
+            if (!model.IsAuthenticated)
+            {
+                model.IsAuthenticated = filterContext.HttpContext.Request.IsAuthenticated;
+            }
+        }
+
         public ActionResult HttpNotFound()
         {
-            return new HttpNotFoundResult();
-        }
-    }
+            ViewData.Model = new AppViewModel {Title = "Resource Not Found"};
+            Response.StatusCode = 404;
 
-    public class HttpNotFoundResult : ViewResult
-    {
-        public HttpNotFoundResult()
-        {
-            this.ViewData["Title"] = "Resource Not Found";
-        }
-
-        public HttpNotFoundResult(string message)
-        {
-            this.ViewData["Title"] = message;
-        }
-
-        public override void ExecuteResult(ControllerContext context)
-        {
-            context.HttpContext.Response.StatusCode = 404;
-            this.ViewName = "Errors/404";
-
-            base.ExecuteResult(context);
+            return View("Errors/404");
         }
     }
 }

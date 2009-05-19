@@ -1,0 +1,4 @@
+Personal guidelines for this project:
+  - TDD: Subclass-Friendly Unit Tests, Integration Tests
+  - Repository Plus Pattern
+  - Native documentation/heredocs

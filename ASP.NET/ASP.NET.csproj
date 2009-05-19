@@ -31,6 +31,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Moq, Version=3.1.416.3, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.4.7.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core">
@@ -42,6 +58,7 @@
     <Reference Include="System.Data.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -58,9 +75,12 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ApplicationController.cs" />
+    <Compile Include="Controllers\AppViewModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RestaurantsController.cs" />
+    <Compile Include="Controllers\RestaurantsViewModel.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -73,8 +93,29 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BurningPlate.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Models\Restaurants.cs" />
+    <Compile Include="Models\Restaurant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\IRestaurantRepository.cs" />
+    <Compile Include="Repositories\SqlRestaurantRepository.cs" />
+    <Compile Include="Services\AuthenticationService.cs" />
+    <Compile Include="Services\IAuthenticationService.cs" />
+    <Compile Include="Services\IMembershipService.cs" />
+    <Compile Include="Services\IRestaurantService.cs" />
+    <Compile Include="Services\MembershipService.cs" />
+    <Compile Include="Services\RestaurantService.cs" />
+    <Compile Include="Tests\Controllers\AccountControllerTests.cs" />
+    <Compile Include="Tests\Controllers\ApplicationControllerTests.cs" />
+    <Compile Include="Tests\Controllers\ControllerTests.cs" />
+    <Compile Include="Tests\Controllers\HomeControllerTests.cs" />
+    <Compile Include="Tests\Controllers\RestaurantsControllerTests.cs" />
+    <Compile Include="Tests\Repositories\RepositoryTests.cs" />
+    <Compile Include="Tests\Services\AuthenticationServiceTests.cs" />
+    <Compile Include="Tests\Services\MembershipServiceTests.cs" />
+    <Compile Include="Tests\Services\RestaurantServiceTests.cs" />
+    <Compile Include="Tests\Services\ServiceTests.cs" />
+    <Compile Include="Tests\Repositories\SqlRestaurantRepositoryTests.cs" />
+    <Compile Include="Tests\TestBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\BurningPlate.mdf">
@@ -84,12 +125,12 @@
     </Content>
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Views\Account\Login.aspx" />
+    <Content Include="Views\Account\Register.aspx" />
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\Restaurants\Index.aspx" />
     <Content Include="Views\Restaurants\View.aspx" />
     <Content Include="Views\Shared\Errors\404.aspx" />
-    <Content Include="Views\Shared\Restaurant.ascx" />
-    <Content Include="Views\Shared\Restaurants.ascx" />
     <Content Include="Web.config" />
     <Content Include="Views\Shared\Site.Master" />
     <Content Include="Views\Web.config" />
@@ -140,4 +181,7 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>copy /Y “$(ProjectDir)Web.config” “$(TargetDir)$(TargetFileName).config</PostBuildEvent>
+  </PropertyGroup>
 </Project>

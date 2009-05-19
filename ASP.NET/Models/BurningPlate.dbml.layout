@@ -2,10 +2,10 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="BurningPlate">
   <DataContextMoniker Name="/BurningPlateDataContext" />
   <nestedChildShapes>
-    <classShape Id="db103c6b-cf4f-4f07-9162-1cd012610635" absoluteBounds="7.125, 1.875, 2, 1.4248478190104168">
+    <classShape Id="234efb2f-719a-4019-8523-c169e1cfa795" absoluteBounds="1.5, 0.625, 2, 1.4248478190104168">
       <DataClassMoniker Name="/BurningPlateDataContext/Restaurant" />
       <nestedChildShapes>
-        <elementListCompartment Id="3df381af-3e40-4506-b915-cadb55642eae" absoluteBounds="7.14, 2.335, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="01deda74-1e1b-44e5-b957-e4d6af9f736c" absoluteBounds="1.5150000000000001, 1.085, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
